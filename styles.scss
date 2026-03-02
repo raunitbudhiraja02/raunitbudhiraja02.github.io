@@ -1,0 +1,494 @@
+/*-- scss:defaults --*/
+
+// ── Google Fonts ─────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap');
+
+// ── Palette ───────────────────────────────────────────────────
+$ink:        #0a0a0f;
+$ink-2:      #111118;
+$ink-3:      #1a1a26;
+$neon:       #7fff6e;
+$neon-dim:   #4dcc3c;
+$frost:      #68d9ff;
+$violet:     #a78bfa;
+$muted:      #5a5a72;
+$surface:    #14141f;
+$border:     #252535;
+$text:       #e2e2e2;
+$text-dim:   #9898b0;
+
+// ── Quarto overrides ──────────────────────────────────────────
+$body-bg:          $ink;
+$body-color:       $text;
+$navbar-bg:        $ink;
+$navbar-fg:        $text;
+$navbar-hl:        $neon;
+$footer-bg:        $ink;
+$footer-fg:        $muted;
+$link-color:       $neon;
+$code-bg:          $ink-3;
+$code-color:       $frost;
+$code-block-bg:    $ink-3;
+$headings-color:   #ffffff;
+$headings-font-weight: 700;
+
+/*-- scss:rules --*/
+
+// ── Base ──────────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: $ink;
+  color: $text;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ── Typography ────────────────────────────────────────────────
+h1, h2, h3, h4 {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { color: $text-dim; max-width: 68ch; }
+
+a {
+  color: $neon;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  &:hover { color: #fff; opacity: 0.9; }
+}
+
+strong { color: $text; }
+
+// ── Navbar ────────────────────────────────────────────────────
+.navbar {
+  border-bottom: 1px solid $border;
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,15,0.92) !important;
+  padding: 0.6rem 2rem;
+}
+
+.navbar-brand img { max-height: 32px; width: auto; }
+
+.navbar-nav .nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: $text-dim !important;
+  padding: 0.4rem 0.75rem !important;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+
+  &:hover, &.active {
+    color: $neon !important;
+    background: rgba(127,255,110,0.07);
+  }
+}
+
+// ── Page wrapper ──────────────────────────────────────────────
+.page-layout-full .page-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// ── Neon accent line ──────────────────────────────────────────
+.neon-rule {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, $neon, transparent);
+  margin: 0.5rem 0 2rem;
+}
+
+// ── Hero section ─────────────────────────────────────────────
+.hero {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 0 4rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 40%, rgba(127,255,110,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(104,217,255,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: $neon;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: $neon;
+  }
+}
+
+.hero-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.hero-role {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: $text-dim;
+  margin-bottom: 1.8rem;
+
+  span {
+    color: $neon;
+    font-weight: 600;
+  }
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: $text-dim;
+  max-width: 52ch;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+// ── Buttons ───────────────────────────────────────────────────
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: $neon;
+  color: $ink !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(127,255,110,0.25);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(127,255,110,0.4);
+    color: $ink !important;
+  }
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  color: $text !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  border: 1px solid $border;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: $neon;
+    color: $neon !important;
+    background: rgba(127,255,110,0.05);
+  }
+}
+
+// ── Stats row ─────────────────────────────────────────────────
+.stats-row {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid $border;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: $neon;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: $muted;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+// ── Section label ─────────────────────────────────────────────
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: $neon;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  &::before {
+    content: '//';
+    opacity: 0.5;
+  }
+}
+
+// ── Cards ─────────────────────────────────────────────────────
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 1.6rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $neon, $frost);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:hover {
+    border-color: rgba(127,255,110,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(127,255,110,0.1);
+
+    &::before { opacity: 1; }
+  }
+
+  .card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: $neon;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    color: #fff;
+    margin: 0 0 0.6rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $text-dim;
+    margin: 0 0 1.2rem;
+    line-height: 1.6;
+  }
+
+  .card-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .pill-group {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+}
+
+.pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  background: $ink-3;
+  color: $text-dim;
+  border: 1px solid $border;
+  border-radius: 100px;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+.pill-neon {
+  background: rgba(127,255,110,0.08);
+  color: $neon;
+  border-color: rgba(127,255,110,0.2);
+}
+
+// ── Skills section ────────────────────────────────────────────
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.skill-block {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 1.2rem;
+
+  .skill-title {
+    font-size: 0.75rem;
+    color: $neon;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+// ── Timeline ──────────────────────────────────────────────────
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 1.5rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, $neon, transparent);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.35rem;
+    width: 8px;
+    height: 8px;
+    background: $neon;
+    border-radius: 50%;
+    box-shadow: 0 0 8px $neon;
+  }
+
+  .tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: $neon;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+
+  h3 { font-size: 1rem; margin: 0 0 0.25rem; color: #fff; }
+  p { font-size: 0.875rem; margin: 0; color: $text-dim; }
+}
+
+// ── Callout overrides ─────────────────────────────────────────
+.callout {
+  background: $surface !important;
+  border-color: $border !important;
+  border-left-color: $neon !important;
+}
+
+.callout-title { color: $neon !important; }
+
+// ── Code blocks ───────────────────────────────────────────────
+pre {
+  background: $ink-3 !important;
+  border: 1px solid $border;
+  border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+// ── Tables ────────────────────────────────────────────────────
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  border-bottom: 1px solid $neon;
+  th { color: $neon; font-weight: 600; padding: 0.6rem 1rem; }
+}
+
+tbody tr {
+  border-bottom: 1px solid $border;
+  td { padding: 0.6rem 1rem; color: $text-dim; }
+  &:hover { background: $surface; }
+}
+
+// ── Footer ────────────────────────────────────────────────────
+.page-footer {
+  border-top: 1px solid $border;
+  font-size: 0.8rem;
+  padding: 1.2rem 2rem;
+}
+
+// ── Scrollbar ─────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: $ink; }
+::-webkit-scrollbar-thumb { background: $border; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: $muted; }
+
+// ── Selection ─────────────────────────────────────────────────
+::selection { background: rgba(127,255,110,0.2); color: #fff; }

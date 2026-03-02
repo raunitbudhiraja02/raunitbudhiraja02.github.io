@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Raunit Budhiraja"
+  favicon: images/favicon.png
+  navbar:
+    title: false
+    logo: images/logo.png
+    background: "#0a0a0f"
+    foreground: "#e2e2e2"
+    right:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: projects/index.qmd
+        text: Projects
+      - href: reflections.qmd
+        text: Reflections
+      - href: contact.qmd
+        text: Contact
+      - href: cv/raunit_cv.pdf
+        text: CV
+        target: _blank
+      - icon: github
+        href: https://github.com/raunitbudhiraja
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/raunitbudhiraja/
+        target: _blank
+  page-footer:
+    background: "#0a0a0f"
+    left: "© 2025 Raunit Budhiraja"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      - darkly
+      - styles.scss
+    mainfont: "DM Sans"
+    monofont: "JetBrains Mono"
+    toc: false
+    page-layout: full
+    code-fold: true
+    code-tools: true
+    highlight-style: dracula
