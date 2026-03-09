@@ -1,0 +1,78 @@
+---
+title: ""
+page-layout: full
+toc: false
+---
+
+```{=html}
+<section style="padding: 4rem 0 2rem;">
+  <div class="section-label">Get in touch</div>
+  <h1>Contact</h1>
+  <hr class="neon-rule">
+</section>
+```
+
+```{=html}
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-bottom: 5rem; align-items: start;">
+
+  <div>
+    <p style="font-size:1.05rem; color:#e2e2e2; line-height: 1.9; margin-bottom: 2rem;">
+      I'm always open to conversations about data, analytics, projects,
+      or opportunities. Whether you're a recruiter, a potential collaborator,
+      or a fellow student — feel free to reach out.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+      <a href="mailto:raunit.budhiraja@mail.dcu.ie" class="project-card" style="text-decoration:none;">
+        <div class="card-tag">Email</div>
+        <h3 style="font-size: 0.95rem;">raunit.budhiraja@mail.dcu.ie</h3>
+        <p style="font-size:0.85rem;">Fastest way to reach me. I typically reply within 24 hours.</p>
+      </a>
+
+      <a href="https://www.linkedin.com/in/raunitbudhiraja/" target="_blank" class="project-card" style="text-decoration:none;">
+        <div class="card-tag">LinkedIn</div>
+        <h3 style="font-size: 0.95rem;">linkedin.com/in/raunitbudhiraja</h3>
+        <p style="font-size:0.85rem;">Connect professionally — I'm open to networking in analytics and tech.</p>
+      </a>
+
+      <a href="https://github.com/raunitbudhiraja" target="_blank" class="project-card" style="text-decoration:none;">
+        <div class="card-tag">GitHub</div>
+        <h3 style="font-size: 0.95rem;">github.com/raunitbudhiraja</h3>
+        <p style="font-size:0.85rem;">Where all the code for this portfolio and other projects lives.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <div>
+    <div style="background: #14141f; border: 1px solid #252535; border-radius: 12px; padding: 2rem;">
+      <div class="section-label" style="margin-bottom: 1.5rem;">Currently</div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-date">2025 – Present</div>
+          <h3>Final Year, BSc Business Analytics</h3>
+          <p>Dublin City University</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">Looking for</div>
+          <h3>Summer Internship / Graduate Role</h3>
+          <p>Data analyst, business analyst, or junior data science roles in Ireland or remote.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-date">Interests</div>
+          <h3>Python · ML · BI · Strategy</h3>
+          <p>Especially interested in companies where analytics sits close to product decisions.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <a href="cv/raunit_cv.pdf" target="_blank" class="btn-neon" style="width:100%; justify-content:center;">
+          Download CV (PDF) →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```

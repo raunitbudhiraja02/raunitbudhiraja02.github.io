@@ -1,0 +1,73 @@
+---
+title: "Raunit Budhiraja"
+image: images/profile.png
+toc: false
+about:
+  template: trestles
+  image-shape: round
+  image-width: 14em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/raunitbudhiraja/
+      target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/raunitbudhiraja
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:raunit.budhiraja@mail.dcu.ie
+    - text: "CV (PDF)"
+      href: cv/raunit_cv.pdf
+      target: _blank
+---
+
+## Hi, I'm Raunit.
+
+I'm a **Business Analytics** student at Dublin City University with a genuine interest
+in the space where data meets decision-making. I turn messy datasets into patterns,
+patterns into insights, and insights into things people can actually act on.
+
+My work sits across data analysis, machine learning, and business strategy.
+Outside of lectures I build small projects — usually starting from a question
+I genuinely want to answer, then figuring out the tools from there.
+
+---
+
+## Skills
+
+| Area | Tools |
+|---|---|
+| Languages | Python, SQL, Markdown, HTML/CSS |
+| Libraries | Pandas, Plotly, Scikit-learn, NumPy |
+| Workflow | Git, GitHub, Quarto, VS Code, Jupyter |
+| Analytics | EDA, Classification, Regression, Dashboards |
+
+---
+
+## Education
+
+**BSc Business Analytics** — Dublin City University *(2022 – Present)*
+
+**Leaving Certificate** *(2022)*
+
+---
+
+## Certifications
+
+- [x] General Data Protection Regulation (GDPR) — Kubicle
+- [x] Data Security: Keeping Your Information Safe — Kubicle
+- [x] Data Security: Handling Data Securely — Kubicle
+- [x] Data Ethics & Risk: Introduction to Data Ethics — Kubicle
+- [x] Data Ethics & Risk: Applying Ethical Thinking — Kubicle
+
+---
+
+## Featured Projects
+
+::: {.callout-note}
+## What I build
+I work on projects across **data analysis**, **machine learning**, **dashboards**, and **business strategy**. 
+Head to the [Projects](projects/index.qmd) page to see them all with full code and write-ups.
+:::
