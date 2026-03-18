@@ -1,0 +1,130 @@
+---
+title: "Market Entry Analysis — SaaS Product"
+description: "A data-driven market entry analysis combining Porter's Five Forces with publicly available market size data for a hypothetical B2B SaaS product."
+author: "Raunit Budhiraja"
+date: "2024-11-05"
+image: "../../images/project-strategy.png"
+categories: [Business Strategy, Frameworks, Research]
+page-layout: full
+toc: true
+---
+
+```{=html}
+<div style="margin-bottom: 2rem;">
+  <span class="pill">Strategy</span>
+  <span class="pill">Research</span>
+  <span class="pill pill-neon">Frameworks</span>
+  <span class="pill">B2B</span>
+</div>
+```
+
+## Overview
+
+This project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: *should this company enter this market?*
+
+The product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter's Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit.
+
+---
+
+## Market Context
+
+The B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.
+
+The gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.
+
+| Metric | Value |
+|---|---|
+| Total Addressable Market (TAM) — EU B2B PM SaaS | €2.8B (2024 est.) |
+| Serviceable Addressable Market (SAM) — Professional Services | €420M |
+| Target Segment — Irish & UK SMEs | €38M |
+| Expected initial market share target | 1–2% |
+
+---
+
+## Porter's Five Forces Analysis
+
+### 1. Threat of New Entrants — **Moderate**
+
+Cloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.
+
+*Implication:* Entry is feasible but requires domain expertise, not just engineering capability.
+
+---
+
+### 2. Bargaining Power of Suppliers — **Low**
+
+Primary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.
+
+*Implication:* No structural constraint on margins from the supply side.
+
+---
+
+### 3. Bargaining Power of Buyers — **High**
+
+Professional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they're easy to lose.
+
+*Implication:* Pricing power is limited. Retention and onboarding quality matter more than acquisition.
+
+---
+
+### 4. Threat of Substitutes — **High**
+
+The real competition isn't just other PM tools — it's spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don't know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a "better than a spreadsheet" bar, not just a "better than Asana" bar.
+
+*Implication:* Product design must prioritise ease of adoption over feature completeness.
+
+---
+
+### 5. Competitive Rivalry — **High**
+
+The general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.
+
+*Implication:* Differentiation must be sharp and defensible — generic "easier to use" positioning won't cut through.
+
+---
+
+## Strategic Assessment
+
+```{=html}
+<div class="card-grid" style="margin: 1.5rem 0;">
+  <div class="project-card" style="cursor:default; border-color: rgba(127,255,110,0.3);">
+    <div class="card-tag" style="color:#7fff6e;">Strengths</div>
+    <p>Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.</p>
+  </div>
+  <div class="project-card" style="cursor:default; border-color: rgba(168,139,250,0.3);">
+    <div class="card-tag" style="color:#a78bfa;">Weaknesses</div>
+    <p>Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.</p>
+  </div>
+  <div class="project-card" style="cursor:default; border-color: rgba(104,217,255,0.3);">
+    <div class="card-tag" style="color:#68d9ff;">Opportunities</div>
+    <p>Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.</p>
+  </div>
+  <div class="project-card" style="cursor:default; border-color: rgba(255,80,80,0.3);">
+    <div class="card-tag" style="color:#ff5050;">Threats</div>
+    <p>Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend.</p>
+  </div>
+</div>
+```
+
+---
+
+## Recommendation
+
+**Enter, but narrow the initial scope.**
+
+The market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.
+
+This mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.
+
+A target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round.
+
+---
+
+## Reflection
+
+This was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don't get communicated in the summary figures.
+
+What I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you're trying to actually make a decision versus produce a slide for a presentation.
+
+<br><br>
+<a href="index.qmd" class="btn-ghost">← Back to Projects</a>

@@ -1,0 +1,47 @@
+- title: "BERT vs GPT-4 for Sentiment Analysis"
+  path: list/bert-gpt4.qmd
+  image: ../images/project-bert.png
+  description: "Fine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications."
+  categories: [Python, NLP, BERT, Deep Learning, Machine Learning]
+  date: 2025-04-10
+  author: "Raunit Budhiraja"
+
+- title: "Power BI Sales Dashboard — TechNova Inc."
+  path: list/powerbi-dashboard.qmd
+  image: ../images/project-powerbi.png
+  description: "Group project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024."
+  categories: [Power BI, Dashboard, Business Analytics, Data Visualisation]
+  date: 2025-03-01
+  author: "Raunit Budhiraja"
+
+- title: "Exploratory Sales Analysis"
+  path: list/data-analysis.qmd
+  image: ../images/project-eda.png
+  description: "Cleaned and explored a retail sales dataset using Pandas, uncovering seasonal trends and product performance patterns through structured EDA."
+  categories: [Python, Data Analysis, EDA, Plotly]
+  date: 2025-03-15
+  author: "Raunit Budhiraja"
+
+- title: "Customer Churn Predictor"
+  path: list/machine-learning.qmd
+  image: ../images/project-ml.png
+  description: "Built a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation."
+  categories: [Python, Machine Learning, Scikit-learn, Classification]
+  date: 2025-02-10
+  author: "Raunit Budhiraja"
+
+- title: "Interactive KPI Dashboard"
+  path: list/dashboard.qmd
+  image: ../images/project-dashboard.png
+  description: "Multi-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period."
+  categories: [Python, Plotly, Dashboard, Visualisation]
+  date: 2025-01-20
+  author: "Raunit Budhiraja"
+
+- title: "Market Entry Analysis — SaaS Product"
+  path: list/business-strategy.qmd
+  image: ../images/project-strategy.png
+  description: "Data-driven market entry analysis for a B2B SaaS product combining Porter's Five Forces with publicly available market sizing data."
+  categories: [Business Strategy, Frameworks, Research]
+  date: 2024-11-05
+  author: "Raunit Budhiraja"
