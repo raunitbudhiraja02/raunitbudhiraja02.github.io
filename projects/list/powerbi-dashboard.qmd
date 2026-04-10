@@ -1,0 +1,120 @@
+---
+title: "Power BI Sales Dashboard — TechNova Inc."
+description: "An interactive group business dashboard built in Power BI analysing sales trends, regional performance, and KPIs across TechNova Inc. (2015–2024)."
+author: "Raunit Budhiraja"
+date: "2025-03-01"
+image: "../../images/project-powerbi.png"
+categories: [Power BI, Dashboard, Business Analytics, Data Visualisation]
+page-layout: full
+toc: true
+---
+
+::: {.callout-note}
+## Group Project
+This was completed as part of a group project. My contributions focused on the regional sales analysis, KPI design, and the written business recommendations.
+:::
+
+## Overview
+
+This project provides a comprehensive performance analysis of **TechNova Inc.** across the period 2015–2024, using an interactive Power BI dashboard built from transactional sales data. The analysis covers sales revenue, profit margins, and operational performance broken down by region, product category, and sales channel.
+
+The central business question: *where is TechNova growing, where is it losing ground, and what should it prioritise?*
+
+---
+
+## Dashboard
+
+![The Power BI dashboard showing TechNova Inc. sales performance across regions and categories (2015–2024).](../../images/project-powerbi.png){fig-alt="Power BI dashboard with sales KPIs, regional breakdown, and trend charts" fig-align="center"}
+
+---
+
+## Data Structure
+
+The dataset covered the following dimensions:
+
+| Field | Description |
+|---|---|
+| Date | Transaction date (2015–2024) |
+| Region | Geographic sales region |
+| Product Category | Product line grouping |
+| Sales Channel | Online vs in-store vs distributor |
+| Revenue | Gross revenue per transaction |
+| Profit | Net profit after COGS |
+| Discount | Discount applied (%) |
+| Sales Rep | Assigned representative |
+
+---
+
+## Key Insights
+
+### Regional Performance
+
+Revenue was not evenly distributed across regions. The **North American** segment drove the highest absolute revenue, but **APAC** showed the strongest year-on-year growth rate between 2021 and 2024 — a pattern worth tracking given lower current margins in that region.
+
+::: {.callout-tip}
+## Recommendation
+Invest in APAC infrastructure and localised pricing before competitors consolidate the market there.
+:::
+
+### Product Category Mix
+
+High-ticket product categories contributed disproportionate revenue but operated on tighter margins than mid-range lines. Discounting behaviour in the **enterprise hardware** category was found to be systematically eroding margin without a corresponding increase in volume.
+
+### Sales Channel Trends
+
+Online sales as a share of total revenue grew from approximately 18% in 2015 to 41% in 2024. This shift has implications for headcount planning (fewer field reps needed) and for customer acquisition costs, which are lower online but come with higher return rates.
+
+### Profitability Variance
+
+Despite revenue recovery post-2020, **profit margins remained compressed** through 2022–2023. The root cause identified was rising logistics costs combined with discount promotions that were not adjusted for the new cost base.
+
+---
+
+## Strategic Recommendations
+
+Based on the dashboard analysis, we recommended the following:
+
+1. **Strengthen online sales** through improved UX and targeted digital marketing, capitalising on the channel shift already underway.
+2. **Rationalise discounting** — particularly in enterprise hardware — with a structured discount approval process tied to margin thresholds.
+3. **Focus investment on high-margin SKUs** and reduce complexity in underperforming long-tail products.
+4. **Develop region-specific pricing** for APAC to improve margin without sacrificing the growth trajectory.
+5. **Use demand forecasting** to reduce overstock and the reactive discounting it creates.
+
+---
+
+## Tools Used
+
+::: {.callout-note}
+## Technology
+- **Power BI Desktop** — dashboard design, DAX measures, and interactive filtering
+- **Excel** — initial data cleaning and exploratory pivot analysis
+- **PowerPoint** — stakeholder presentation of findings
+:::
+
+---
+
+## Mermaid: Analysis Workflow
+
+```{mermaid}
+flowchart LR
+  A[Raw Sales CSV] --> B[Excel Cleaning]
+  B --> C[Power BI Import]
+  C --> D[DAX Measures]
+  D --> E1[Regional Dashboard]
+  D --> E2[Category Breakdown]
+  D --> E3[Channel Trends]
+  E1 --> F[Business Recommendations]
+  E2 --> F
+  E3 --> F
+```
+
+---
+
+## Reflection
+
+Working in a group on a data project surfaced something that individual projects don't: the hardest part isn't the analysis, it's agreeing on what question you're answering. We spent more time than expected aligning on which KPIs to prioritise before we could build anything useful.
+
+The other thing I took from this: Power BI is genuinely powerful for stakeholder-facing reporting, but it abstracts away the data manipulation in a way that can hide assumptions. Knowing the underlying data — really knowing it, having cleaned it yourself — is what lets you catch when a DAX measure is giving plausible-looking but wrong numbers.
+
+<br>
+[← Back to Projects](../index.qmd){.btn-ghost}

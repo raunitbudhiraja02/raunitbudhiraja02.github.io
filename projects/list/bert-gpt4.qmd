@@ -1,0 +1,401 @@
+---
+title: "BERT vs GPT-4 for Sentiment Analysis"
+description: "Fine-tuning BERT on Rotten Tomatoes reviews and comparing performance against GPT-4 zero-shot and few-shot prompting for business NLP applications."
+author: "Raunit Budhiraja"
+date: "2025-04-10"
+image: "../../images/project-bert.png"
+categories: [Python, NLP, BERT, Machine Learning, Deep Learning]
+page-layout: full
+toc: true
+code-fold: true
+code-tools: true
+highlight-style: dracula
+execute:
+  eval: false
+  echo: true
+---
+
+## Overview
+
+Two fundamentally different types of AI model are compared here. BERT is a **discriminative** model — built to classify. GPT-4 is a **generative** model — built to produce language, which can be directed toward classification through prompting.[^1]
+
+[^1]: This distinction — discriminative vs generative — is one of the most important conceptual divides in modern NLP. Discriminative models learn a boundary between classes; generative models learn the underlying data distribution.
+
+Understanding this distinction is essential before drawing any conclusions about which approach is better for a given business context.
+
+---
+
+## Why This Comparison Matters
+
+For a company processing thousands of customer reviews per day, the choice of model has real operational consequences:
+
+| Consideration | BERT (fine-tuned) | GPT-4 (prompting) |
+|---|---|---|
+| Setup cost | High — requires labelled data & training | Low — just write a prompt |
+| Inference cost | Low — runs locally | High — API cost per call |
+| Latency | Fast (~10ms/sample) | Slow (~1–3s/sample) |
+| Accuracy | High on in-domain data | Strong zero-shot, improves with examples |
+| Flexibility | Retrain for new tasks | Prompt engineering only |
+
+---
+
+## Model Pipeline
+
+```{mermaid}
+flowchart LR
+  A[Rotten Tomatoes Dataset] --> B[Text Cleaning]
+  B --> C[Balanced 20k Sample]
+  C --> D1[BERT Tokeniser]
+  C --> D2[GPT-4 API Prompt]
+  D1 --> E1[Fine-tune BERT]
+  D2 --> E2[Zero-Shot]
+  D2 --> E3[Few-Shot]
+  E1 --> F[Compare on 200-sample Test Set]
+  E2 --> F
+  E3 --> F
+  F --> G[Metrics: Accuracy, F1, Latency]
+```
+
+---
+
+## Evaluation Metric
+
+The primary metric is **F1-score**, which balances precision and recall — important when both false positives and false negatives carry a cost:
+
+$$F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
+
+ROC-AUC is used as a secondary metric:
+
+$$\text{AUC} = \int_0^1 \text{TPR}(t) \, d\text{FPR}(t)$$
+
+---
+
+## Setup
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+import warnings
+warnings.filterwarnings('ignore')
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import (
+    accuracy_score, precision_score, recall_score,
+    f1_score, classification_report, confusion_matrix
+)
+from transformers import (
+    BertTokenizer, BertForSequenceClassification,
+    TrainingArguments, Trainer, EarlyStoppingCallback
+)
+from torch.utils.data import Dataset
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f'Using device: {device}')
+```
+
+---
+
+## Data Loading and Preparation
+
+```{python}
+# Load Rotten Tomatoes critic reviews dataset
+df_raw = pd.read_csv('data/rotten_tomatoes_critic_reviews.csv')
+
+TEXT_COL  = 'review_content'
+LABEL_COL = 'review_type'
+LABEL_MAP = {'Fresh': 1, 'Rotten': 0}
+
+df = df_raw[[TEXT_COL, LABEL_COL]].dropna().copy()
+df.columns = ['text', 'label_raw']
+df['label'] = df['label_raw'].map(LABEL_MAP)
+df = df.dropna(subset=['label'])
+df['label'] = df['label'].astype(int)
+
+# Balanced 10k per class
+SAMPLE_PER_CLASS = 10_000
+df_pos = df[df['label'] == 1].sample(n=SAMPLE_PER_CLASS, random_state=42)
+df_neg = df[df['label'] == 0].sample(n=SAMPLE_PER_CLASS, random_state=42)
+df_balanced = pd.concat([df_pos, df_neg]).sample(frac=1, random_state=42).reset_index(drop=True)
+
+print(f'Dataset size: {len(df_balanced):,}')
+print(df_balanced['label'].value_counts())
+```
+
+---
+
+## Text Cleaning
+
+```{python}
+import re
+
+def clean_text(text: str) -> str:
+    text = str(text).lower()
+    text = re.sub(r'<[^>]+>', ' ', text)
+    text = re.sub(r'[^a-z0-9\s\'\"\.,!?-]', ' ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+df_balanced['text_clean'] = df_balanced['text'].apply(clean_text)
+print('Sample cleaned review:')
+print(df_balanced['text_clean'].iloc[0][:300])
+```
+
+---
+
+## Train/Val/Test Split
+
+```{python}
+texts  = df_balanced['text_clean'].tolist()
+labels = df_balanced['label'].tolist()
+
+# 70% train / 15% val / 15% test
+train_val_texts, test_texts, train_val_labels, test_labels = train_test_split(
+    texts, labels, test_size=0.15, random_state=42, stratify=labels
+)
+train_texts, val_texts, train_labels, val_labels = train_test_split(
+    train_val_texts, train_val_labels,
+    test_size=0.176, random_state=42, stratify=train_val_labels
+)
+
+print(f'Train: {len(train_texts):,} | Val: {len(val_texts):,} | Test: {len(test_texts):,}')
+```
+
+---
+
+## BERT Tokenisation and Dataset
+
+```{python}
+MODEL_NAME = 'bert-base-uncased'
+MAX_LEN    = 128
+
+tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
+
+class SentimentDataset(Dataset):
+    def __init__(self, encodings, labels):
+        self.encodings = encodings
+        self.labels    = labels
+    def __len__(self):
+        return len(self.labels)
+    def __getitem__(self, idx):
+        item = {key: val[idx] for key, val in self.encodings.items()}
+        item['labels'] = torch.tensor(self.labels[idx], dtype=torch.long)
+        return item
+
+train_encodings = tokenizer(train_texts, truncation=True,
+    padding='max_length', max_length=MAX_LEN, return_tensors='pt')
+val_encodings   = tokenizer(val_texts,   truncation=True,
+    padding='max_length', max_length=MAX_LEN, return_tensors='pt')
+test_encodings  = tokenizer(test_texts,  truncation=True,
+    padding='max_length', max_length=MAX_LEN, return_tensors='pt')
+
+train_dataset = SentimentDataset(train_encodings, train_labels)
+val_dataset   = SentimentDataset(val_encodings,   val_labels)
+test_dataset  = SentimentDataset(test_encodings,  test_labels)
+```
+
+---
+
+## Fine-Tuning BERT
+
+```{python}
+model = BertForSequenceClassification.from_pretrained(
+    MODEL_NAME, num_labels=2,
+    id2label={0: 'NEGATIVE', 1: 'POSITIVE'},
+    label2id={'NEGATIVE': 0, 'POSITIVE': 1}
+).to(device)
+
+def compute_metrics(eval_pred):
+    logits, labels = eval_pred
+    preds = np.argmax(logits, axis=-1)
+    return {
+        'accuracy' : round(accuracy_score(labels, preds), 4),
+        'f1'       : round(f1_score(labels, preds, average='binary'), 4),
+        'precision': round(precision_score(labels, preds, average='binary'), 4),
+        'recall'   : round(recall_score(labels, preds, average='binary'), 4),
+    }
+
+training_args = TrainingArguments(
+    output_dir='./bert_results',
+    learning_rate=2e-5,
+    per_device_train_batch_size=16,
+    per_device_eval_batch_size=32,
+    num_train_epochs=3,
+    weight_decay=0.01,
+    warmup_steps=500,
+    eval_strategy='epoch',
+    save_strategy='epoch',
+    load_best_model_at_end=True,
+    metric_for_best_model='f1',
+    seed=42,
+    fp16=torch.cuda.is_available(),
+    report_to='none',
+)
+
+trainer = Trainer(
+    model=model, args=training_args,
+    train_dataset=train_dataset, eval_dataset=val_dataset,
+    compute_metrics=compute_metrics,
+    callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
+)
+
+train_result = trainer.train()
+print(f"Final train loss: {train_result.metrics['train_loss']:.4f}")
+```
+
+---
+
+## GPT-4 Zero-Shot and Few-Shot Prompting
+
+```{python}
+import openai
+import time
+
+client = openai.OpenAI(api_key="YOUR_API_KEY")
+
+# Zero-shot prompt
+ZERO_SHOT_TEMPLATE = """Classify the sentiment of this movie review as exactly one word: POSITIVE or NEGATIVE.
+
+Review: {review}
+
+Answer:"""
+
+# Few-shot examples
+FEW_SHOT_EXAMPLES = [
+    {"review": "A visually stunning masterpiece.", "label": "POSITIVE"},
+    {"review": "Heartfelt performances and a tightly written script.", "label": "POSITIVE"},
+    {"review": "A feel-good crowd-pleaser.", "label": "POSITIVE"},
+    {"review": "A tedious, poorly paced slog.", "label": "NEGATIVE"},
+    {"review": "Confusing, loud, and devoid of emotional resonance.", "label": "NEGATIVE"},
+    {"review": "Collapses under its own pretension.", "label": "NEGATIVE"},
+]
+
+def build_few_shot_prompt(review: str) -> str:
+    examples = "\n".join(
+        f'Review: {ex["review"]}\nSentiment: {ex["label"]}'
+        for ex in FEW_SHOT_EXAMPLES
+    )
+    return (f"Classify each review as POSITIVE or NEGATIVE.\n\n"
+            f"{examples}\n\nReview: {review[:400]}\nSentiment:")
+
+def gpt4_predict(prompt: str) -> int:
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=5, temperature=0
+    )
+    reply = response.choices[0].message.content.strip().upper()
+    return 1 if "POSITIVE" in reply else 0
+```
+
+---
+
+## Three-Way Comparison Results
+
+```{python}
+# Sample 200 from test set for comparison
+N = 200
+rng = np.random.default_rng(42)
+idx = rng.choice(len(test_texts), N, replace=False)
+sample_texts  = [test_texts[i]  for i in idx]
+sample_labels = [test_labels[i] for i in idx]
+
+# BERT predictions
+sample_enc = tokenizer(sample_texts, truncation=True,
+    padding='max_length', max_length=MAX_LEN, return_tensors='pt')
+sample_ds   = SentimentDataset(sample_enc, sample_labels)
+bert_output = trainer.predict(sample_ds)
+bert_preds  = np.argmax(bert_output.predictions, axis=-1).tolist()
+
+# GPT-4 zero-shot
+zs_preds = [gpt4_predict(ZERO_SHOT_TEMPLATE.format(review=t[:400])) for t in sample_texts]
+
+# GPT-4 few-shot
+fs_preds = [gpt4_predict(build_few_shot_prompt(t)) for t in sample_texts]
+
+# Results table
+results = {
+    'Model':     ['BERT (fine-tuned)', 'GPT-4 Zero-Shot', 'GPT-4 Few-Shot'],
+    'Accuracy':  [accuracy_score(sample_labels, p) for p in [bert_preds, zs_preds, fs_preds]],
+    'F1':        [f1_score(sample_labels, p, average='binary') for p in [bert_preds, zs_preds, fs_preds]],
+    'Precision': [precision_score(sample_labels, p, average='binary') for p in [bert_preds, zs_preds, fs_preds]],
+    'Recall':    [recall_score(sample_labels, p, average='binary') for p in [bert_preds, zs_preds, fs_preds]],
+}
+results_df = pd.DataFrame(results)
+print(results_df.to_string(index=False))
+```
+
+---
+
+## Visualisation
+
+```{python}
+#| fig-cap: "Three-way performance comparison across Accuracy, Precision, Recall, and F1-Score."
+
+metrics = ['Accuracy', 'Precision', 'Recall', 'F1']
+models  = results_df['Model'].tolist()
+x = np.arange(len(metrics))
+width = 0.25
+
+colors = ['#7fff6e', '#68d9ff', '#a78bfa']
+fig, ax = plt.subplots(figsize=(10, 5))
+for i, (model, color) in enumerate(zip(models, colors)):
+    vals = [results_df.loc[results_df['Model']==model, m].values[0] for m in metrics]
+    bars = ax.bar(x + (i - 1) * width, vals, width, label=model,
+                  color=color, edgecolor='black', alpha=0.9)
+    for bar in bars:
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.005,
+                f'{bar.get_height():.3f}', ha='center', va='bottom', fontsize=8)
+
+ax.set_xticks(x)
+ax.set_xticklabels(metrics)
+ax.set_ylim(0.70, 1.01)
+ax.set_ylabel('Score')
+ax.set_title('BERT vs GPT-4: Zero-Shot vs Few-Shot', fontweight='bold')
+ax.legend()
+ax.grid(axis='y', linestyle='--', alpha=0.4)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## Project Checklist
+
+- [x] Load and balance Rotten Tomatoes dataset
+- [x] Clean and tokenise text
+- [x] Fine-tune BERT with early stopping
+- [x] GPT-4 zero-shot evaluation
+- [x] GPT-4 few-shot evaluation (6 examples)
+- [x] Three-way performance comparison
+- [ ] Deploy BERT as a REST API (future work)
+
+---
+
+## Key Takeaways
+
+::: {.callout-note}
+## What the comparison showed
+
+- **BERT** achieves higher F1 with low latency — the right tool for high-throughput production classification.
+- **GPT-4 few-shot** closes the gap significantly with just 6 labelled examples — no training required.
+- **GPT-4 zero-shot** performs surprisingly well, making it useful for rapid prototyping when labelled data doesn't exist yet.
+- The practical decision depends on volume, latency constraints, and budget — not just accuracy numbers.
+:::
+
+::: {.callout-tip}
+## Key insight on few-shot prompting
+Few-shot examples reduce label ambiguity — the model sees exactly what format and vocabulary are expected. It's a zero-cost adaptation strategy: no GPU, no dataset labelling required.
+:::
+
+---
+
+## Reflection
+
+The most interesting tension in this project was between accuracy and practicality. BERT wins on pure metrics, but a business spinning up a sentiment analysis pipeline for the first time probably shouldn't start with fine-tuning. GPT-4 with a well-written few-shot prompt gets you 85–90% of the way there in an afternoon.
+
+The harder question — which I kept coming back to — is what "accuracy" even means in a production context. A model that's 92% accurate on a balanced test set might perform very differently on the skewed, messy text that actually comes through a review system. Benchmark numbers are a starting point, not a verdict.
+
+<br>
+[← Back to Projects](../index.qmd){.btn-ghost}
