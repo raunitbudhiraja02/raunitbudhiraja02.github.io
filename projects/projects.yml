@@ -3,7 +3,7 @@
   image: ../images/project-bert.png
   description: "Fine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications."
   categories: [Python, NLP, BERT, Deep Learning, Machine Learning]
-  date: 2025-04-10
+  date: 2026-04-10
   author: "Raunit Budhiraja"
 
 - title: "Power BI Sales Dashboard — TechNova Inc."
@@ -11,12 +11,12 @@
   image: ../images/project-powerbi.png
   description: "Group project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024."
   categories: [Power BI, Dashboard, Business Analytics, Data Visualisation]
-  date: 2025-03-01
+  date: 2026-01-02
   author: "Raunit Budhiraja"
 
 - title: "Customer Churn Predictor"
   path: list/machine-learning.qmd
-  image: ../images/project-ml.png
+  image: ../images/project-ml.jpeg
   description: "Built a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation."
   categories: [Python, Machine Learning, Scikit-learn, Classification]
   date: 2025-02-10
