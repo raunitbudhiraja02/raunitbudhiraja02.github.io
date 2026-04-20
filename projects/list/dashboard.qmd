@@ -2,7 +2,7 @@
 title: "Interactive KPI Dashboard"
 description: "A multi-panel business intelligence dashboard built with Plotly Express to track revenue, customer acquisition cost, and churn over time."
 author: "Raunit Budhiraja"
-date: "2025-01-20"
+date: "2026-01-02"
 image: "../../images/project-dashboard.png"
 categories: [Python, Plotly, Dashboard, Visualisation]
 page-layout: full

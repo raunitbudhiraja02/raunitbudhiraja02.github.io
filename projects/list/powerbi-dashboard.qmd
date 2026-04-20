@@ -2,7 +2,7 @@
 title: "Power BI Sales Dashboard — TechNova Inc."
 description: "An interactive group business dashboard built in Power BI analysing sales trends, regional performance, and KPIs across TechNova Inc. (2015–2024)."
 author: "Raunit Budhiraja"
-date: "2025-03-01"
+date: "2026-03-01"
 image: "../../images/project-powerbi.png"
 categories: [Power BI, Dashboard, Business Analytics, Data Visualisation]
 page-layout: full

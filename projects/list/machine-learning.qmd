@@ -2,7 +2,7 @@
 title: "Customer Churn Predictor"
 description: "Training a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and performance evaluation."
 author: "Raunit Budhiraja"
-date: "2025-02-10"
+date: "2026-02-10"
 image: "../../images/project-ml.png"
 categories: [Python, Machine Learning, Classification, Scikit-learn]
 page-layout: full

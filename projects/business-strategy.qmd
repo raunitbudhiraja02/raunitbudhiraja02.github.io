@@ -1,6 +1,6 @@
 ---
 title: "Market Entry Analysis — SaaS Product"
-date: "2024-11-05"
+date: "2026-11-05"
 categories: [Business Strategy, Research, Frameworks]
 description: "A data-driven market entry analysis combining Porter's Five Forces with publicly available market size data for a hypothetical B2B SaaS product."
 page-layout: full
