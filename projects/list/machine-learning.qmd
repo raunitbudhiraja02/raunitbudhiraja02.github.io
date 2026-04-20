@@ -253,4 +253,4 @@ What surprised me here was how much signal was already baked into fairly simple 
 The harder question — which I didn't answer here — is what to *do* with the prediction. A high-probability churn score only helps if there's a retention action to pair with it: a discount, a proactive support call, a plan upgrade offer. The model is only as useful as the process downstream of it.
 
 <br><br>
-<a href="index.qmd" class="btn-ghost">← Back to Projects</a>
+<a href="/index.qmd" class="btn-ghost">← Back to Projects</a>

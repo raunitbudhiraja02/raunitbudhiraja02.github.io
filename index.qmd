@@ -10,7 +10,7 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/raunitbudhiraja02/
+      href: https://www.linkedin.com/in/raunit-budhiraja-980595203/
       target: _blank
     - icon: github
       text: GitHub

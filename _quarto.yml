@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!SETUP.md"
 
 website:
   title: "Raunit Budhiraja"
@@ -27,7 +30,7 @@ website:
         href: https://github.com/raunitbudhiraja02
         target: _blank
       - icon: linkedin
-        href: https://www.linkedin.com/in/raunitbudhiraja/
+        href: https://www.linkedin.com/in/raunit-budhiraja-980595203/
         target: _blank
   page-footer:
     background: "#0a0a0f"

@@ -201,4 +201,4 @@ This project shifted my thinking about what "good" data visualisation means. My 
 The combined subplot at the end is the exception: it works because it's explicitly framed as a summary for someone who already knows what they're looking at. Context changes what's appropriate.
 
 <br><br>
-<a href="index.qmd" class="btn-ghost">← Back to Projects</a>
+<a href="/index.qmd" class="btn-ghost">← Back to Projects</a>

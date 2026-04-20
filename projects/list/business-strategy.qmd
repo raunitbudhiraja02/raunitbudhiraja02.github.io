@@ -127,4 +127,4 @@ This was the project I found most uncomfortable to work on — not because the a
 What I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you're trying to actually make a decision versus produce a slide for a presentation.
 
 <br><br>
-<a href="index.qmd" class="btn-ghost">← Back to Projects</a>
+<a href="/index.qmd" class="btn-ghost">← Back to Projects</a>

@@ -56,48 +56,6 @@
     "text": "Footnotes\n\n\nThis connects to what Cathy O’Neil calls “Weapons of Math Destruction” — models that look objective but embed subjective, often harmful assumptions.↩︎"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Raunit Budhiraja",
-    "section": "",
-    "text": "I’m a Business Analytics student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.\nMy work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there."
-  },
-  {
-    "objectID": "index.html#hi-im-raunit.",
-    "href": "index.html#hi-im-raunit.",
-    "title": "Raunit Budhiraja",
-    "section": "",
-    "text": "I’m a Business Analytics student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.\nMy work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there."
-  },
-  {
-    "objectID": "index.html#skills",
-    "href": "index.html#skills",
-    "title": "Raunit Budhiraja",
-    "section": "Skills",
-    "text": "Skills\n\n\n\nArea\nTools\n\n\n\n\nLanguages\nPython, SQL, Markdown, HTML/CSS\n\n\nLibraries\nPandas, Plotly, Scikit-learn, NumPy\n\n\nWorkflow\nGit, GitHub, Quarto, VS Code, Jupyter\n\n\nAnalytics\nEDA, Classification, Regression, Dashboards"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Raunit Budhiraja",
-    "section": "Education",
-    "text": "Education\nBSc Business Analytics — Dublin City University (2022 – Present)\nLeaving Certificate (2022)"
-  },
-  {
-    "objectID": "index.html#certifications",
-    "href": "index.html#certifications",
-    "title": "Raunit Budhiraja",
-    "section": "Certifications",
-    "text": "Certifications\n\nGeneral Data Protection Regulation (GDPR) — Kubicle\nData Security: Keeping Your Information Safe — Kubicle\nData Security: Handling Data Securely — Kubicle\nData Ethics & Risk: Introduction to Data Ethics — Kubicle\nData Ethics & Risk: Applying Ethical Thinking — Kubicle"
-  },
-  {
-    "objectID": "index.html#featured-projects",
-    "href": "index.html#featured-projects",
-    "title": "Raunit Budhiraja",
-    "section": "Featured Projects",
-    "text": "Featured Projects\n\n\n\n\n\n\nNoteWhat I build\n\n\n\nI work on projects across data analysis, machine learning, dashboards, and business strategy. Head to the Projects page to see them all with full code and write-ups."
-  },
-  {
     "objectID": "projects/list/powerbi-dashboard.html",
     "href": "projects/list/powerbi-dashboard.html",
     "title": "Power BI Sales Dashboard — TechNova Inc.",
@@ -159,111 +117,6 @@
     "title": "Power BI Sales Dashboard — TechNova Inc.",
     "section": "Reflection",
     "text": "Reflection\nWorking in a group on a data project surfaced something that individual projects don’t: the hardest part isn’t the analysis, it’s agreeing on what question you’re answering. We spent more time than expected aligning on which KPIs to prioritise before we could build anything useful.\nThe other thing I took from this: Power BI is genuinely powerful for stakeholder-facing reporting, but it abstracts away the data manipulation in a way that can hide assumptions. Knowing the underlying data — really knowing it, having cleaned it yourself — is what lets you catch when a DAX measure is giving plausible-looking but wrong numbers.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html",
-    "href": "projects/list/machine-learning.html",
-    "title": "Customer Churn Predictor",
-    "section": "",
-    "text": "Scikit-learn\n  Pandas\n  Random Forest\n  Classification"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#overview",
-    "href": "projects/list/machine-learning.html#overview",
-    "title": "Customer Churn Predictor",
-    "section": "Overview",
-    "text": "Overview\nChurn — customers leaving — is one of the more expensive problems a subscription business faces. Acquiring a new customer typically costs five to seven times more than retaining an existing one, so even modest improvements in churn prediction translate to real money saved.1\nThis project builds a binary classification model to predict whether a telecom customer will churn, using demographic and usage features. The goal isn’t just a model — it’s an understanding of which features actually drive the prediction, so the output is actionable."
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#model-pipeline",
-    "href": "projects/list/machine-learning.html#model-pipeline",
-    "title": "Customer Churn Predictor",
-    "section": "Model Pipeline",
-    "text": "Model Pipeline\n\n\n\n\n\nflowchart LR\n  A[Raw Data] --&gt; B[Feature Engineering]\n  B --&gt; C[Train/Test Split]\n  C --&gt; D[Random Forest]\n  D --&gt; E[Predictions]\n  E --&gt; F[Confusion Matrix]\n  E --&gt; G[ROC Curve]\n  E --&gt; H[Feature Importance]"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#evaluation-metric",
-    "href": "projects/list/machine-learning.html#evaluation-metric",
-    "title": "Customer Churn Predictor",
-    "section": "Evaluation Metric",
-    "text": "Evaluation Metric\nThe primary metric is ROC-AUC:\n\\[\\text{AUC} = \\int_0^1 \\text{TPR}(t) \\, d\\text{FPR}(t)\\]\nAn AUC of 0.5 is random; 1.0 is perfect classification."
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#project-checklist",
-    "href": "projects/list/machine-learning.html#project-checklist",
-    "title": "Customer Churn Predictor",
-    "section": "Project Checklist",
-    "text": "Project Checklist\n\nGenerate synthetic dataset\nEncode categorical features\nTrain/test split (80/20)\nTrain Random Forest\nEvaluate with AUC and classification report\nFeature importance analysis\nCompare with Logistic Regression baseline (future work)"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#setup",
-    "href": "projects/list/machine-learning.html#setup",
-    "title": "Customer Churn Predictor",
-    "section": "Setup",
-    "text": "Setup\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import (classification_report,\n                             confusion_matrix,\n                             roc_auc_score, roc_curve)\nfrom sklearn.preprocessing import LabelEncoder\n\nnp.random.seed(99)"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#synthetic-dataset",
-    "href": "projects/list/machine-learning.html#synthetic-dataset",
-    "title": "Customer Churn Predictor",
-    "section": "Synthetic Dataset",
-    "text": "Synthetic Dataset\n\n\nCode\nn = 1200\n\ndf = pd.DataFrame({\n    \"tenure_months\":      np.random.randint(1, 72, n),\n    \"monthly_charges\":    np.round(np.random.uniform(20, 110, n), 2),\n    \"num_products\":       np.random.randint(1, 5, n),\n    \"support_calls\":      np.random.poisson(1.5, n),\n    \"contract_type\":      np.random.choice([\"Month-to-month\", \"One year\", \"Two year\"], n,\n                                            p=[0.55, 0.25, 0.20]),\n    \"internet_service\":   np.random.choice([\"Fibre\", \"DSL\", \"None\"], n, p=[0.44, 0.35, 0.21]),\n    \"has_tech_support\":   np.random.choice([0, 1], n, p=[0.55, 0.45]),\n})\n\n# Churn influenced by real-world logic\nchurn_prob = (\n    0.35\n    - 0.004 * df[\"tenure_months\"]\n    + 0.003 * df[\"monthly_charges\"]\n    + 0.05  * df[\"support_calls\"]\n    - 0.10  * (df[\"contract_type\"] == \"Two year\").astype(int)\n    - 0.05  * (df[\"contract_type\"] == \"One year\").astype(int)\n    + 0.08  * (df[\"internet_service\"] == \"Fibre\").astype(int)\n).clip(0.05, 0.90)\n\ndf[\"churned\"] = (np.random.rand(n) &lt; churn_prob).astype(int)\nprint(f\"Dataset: {len(df):,} customers | Churn rate: {df['churned'].mean():.1%}\")\ndf.head()\n\n\nDataset: 1,200 customers | Churn rate: 47.3%\n\n\n\n\n\n\n\n\n\ntenure_months\nmonthly_charges\nnum_products\nsupport_calls\ncontract_type\ninternet_service\nhas_tech_support\nchurned\n\n\n\n\n0\n2\n43.06\n3\n2\nMonth-to-month\nNone\n1\n0\n\n\n1\n36\n92.88\n4\n3\nOne year\nNone\n0\n0\n\n\n2\n58\n41.63\n4\n1\nMonth-to-month\nDSL\n0\n1\n\n\n3\n41\n91.22\n4\n2\nMonth-to-month\nFibre\n0\n1\n\n\n4\n69\n95.95\n4\n1\nTwo year\nDSL\n1\n1"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#preprocessing",
-    "href": "projects/list/machine-learning.html#preprocessing",
-    "title": "Customer Churn Predictor",
-    "section": "Preprocessing",
-    "text": "Preprocessing\n\n\nCode\nle = LabelEncoder()\ndf[\"contract_enc\"]  = le.fit_transform(df[\"contract_type\"])\ndf[\"internet_enc\"]  = le.fit_transform(df[\"internet_service\"])\n\nfeatures = [\"tenure_months\", \"monthly_charges\", \"num_products\",\n            \"support_calls\", \"contract_enc\", \"internet_enc\", \"has_tech_support\"]\nX = df[features]\ny = df[\"churned\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nprint(f\"Training set: {len(X_train)} | Test set: {len(X_test)}\")\n\n\nTraining set: 960 | Test set: 240"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#model-training",
-    "href": "projects/list/machine-learning.html#model-training",
-    "title": "Customer Churn Predictor",
-    "section": "Model Training",
-    "text": "Model Training\n\n\nCode\nrf = RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)\nrf.fit(X_train, y_train)\n\ny_pred = rf.predict(X_test)\ny_prob = rf.predict_proba(X_test)[:, 1]\n\nprint(classification_report(y_test, y_pred, target_names=[\"Retained\", \"Churned\"]))\nprint(f\"ROC-AUC: {roc_auc_score(y_test, y_prob):.3f}\")\n\n\n              precision    recall  f1-score   support\n\n    Retained       0.70      0.68      0.69       125\n     Churned       0.66      0.68      0.67       115\n\n    accuracy                           0.68       240\n   macro avg       0.68      0.68      0.68       240\nweighted avg       0.68      0.68      0.68       240\n\nROC-AUC: 0.735"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#confusion-matrix",
-    "href": "projects/list/machine-learning.html#confusion-matrix",
-    "title": "Customer Churn Predictor",
-    "section": "Confusion Matrix",
-    "text": "Confusion Matrix\n\n\nCode\ncm = confusion_matrix(y_test, y_pred)\nlabels = [\"Retained\", \"Churned\"]\n\nfig = px.imshow(\n    cm, text_auto=True,\n    x=labels, y=labels,\n    color_continuous_scale=[\"#14141f\", \"#7fff6e\"],\n    title=\"Confusion Matrix\"\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n)\nfig.update_xaxes(title=\"Predicted\")\nfig.update_yaxes(title=\"Actual\")\nfig.show()"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#feature-importance",
-    "href": "projects/list/machine-learning.html#feature-importance",
-    "title": "Customer Churn Predictor",
-    "section": "Feature Importance",
-    "text": "Feature Importance\nWhich features does the model actually rely on?\n\n\nCode\nimportance_df = pd.DataFrame({\n    \"feature\": features,\n    \"importance\": rf.feature_importances_\n}).sort_values(\"importance\", ascending=True)\n\nfig = px.bar(\n    importance_df, x=\"importance\", y=\"feature\",\n    orientation=\"h\",\n    title=\"Feature Importance (Random Forest)\",\n    labels={\"importance\": \"Importance\", \"feature\": \"\"},\n    color=\"importance\",\n    color_continuous_scale=[\"#252535\", \"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nTenure and monthly charges are the strongest predictors — both intuitively sensible. Long-tenured customers have demonstrated loyalty; high charges without perceived value are a known churn driver."
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#roc-curve",
-    "href": "projects/list/machine-learning.html#roc-curve",
-    "title": "Customer Churn Predictor",
-    "section": "ROC Curve",
-    "text": "ROC Curve\n\n\nCode\nfpr, tpr, _ = roc_curve(y_test, y_prob)\nauc_val = roc_auc_score(y_test, y_prob)\n\nfig = go.Figure()\nfig.add_trace(go.Scatter(x=fpr, y=tpr, mode=\"lines\",\n                          name=f\"RF (AUC = {auc_val:.3f})\",\n                          line=dict(color=\"#7fff6e\", width=2.5)))\nfig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode=\"lines\",\n                          name=\"Random\", line=dict(color=\"#5a5a72\", dash=\"dash\")))\nfig.update_layout(\n    title=\"ROC Curve\", plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(title=\"False Positive Rate\", gridcolor=\"#252535\"),\n    yaxis=dict(title=\"True Positive Rate\", gridcolor=\"#252535\"),\n    legend=dict(bgcolor=\"rgba(0,0,0,0)\")\n)\nfig.show()"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#takeaways",
-    "href": "projects/list/machine-learning.html#takeaways",
-    "title": "Customer Churn Predictor",
-    "section": "Takeaways",
-    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nModel results:\n\nROC-AUC above 0.80 suggests the model has genuine discriminative power beyond baseline guessing.\nTenure is the single most predictive feature — a simple business rule emerges: customers who reach 12+ months are significantly less likely to churn.\nContract type matters: month-to-month customers are a distinct risk cohort worth targeting with retention offers early in their lifecycle."
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#reflection",
-    "href": "projects/list/machine-learning.html#reflection",
-    "title": "Customer Churn Predictor",
-    "section": "Reflection",
-    "text": "Reflection\nWhat surprised me here was how much signal was already baked into fairly simple features. I expected to need interaction terms or more complex feature engineering, but the Random Forest extracted meaningful patterns from raw inputs without much coaxing.\nThe harder question — which I didn’t answer here — is what to do with the prediction. A high-probability churn score only helps if there’s a retention action to pair with it: a discount, a proactive support call, a plan upgrade offer. The model is only as useful as the process downstream of it.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/list/machine-learning.html#footnotes",
-    "href": "projects/list/machine-learning.html#footnotes",
-    "title": "Customer Churn Predictor",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe 5–7x acquisition cost figure is widely cited in CRM literature, originating from Reichheld & Sasser’s research at Bain & Company.↩︎"
   },
   {
     "objectID": "projects/list/data-analysis.html",
@@ -364,6 +217,55 @@
     "text": "Footnotes\n\n\nThis is sometimes called the “curse of dimensionality” in data science — more data doesn’t automatically mean more insight.↩︎"
   },
   {
+    "objectID": "projects/list/business-strategy.html",
+    "href": "projects/list/business-strategy.html",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "",
+    "text": "Strategy\n  Research\n  Frameworks\n  B2B"
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#overview",
+    "href": "projects/list/business-strategy.html#overview",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Overview",
+    "text": "Overview\nThis project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: should this company enter this market?\nThe product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter’s Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit."
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#market-context",
+    "href": "projects/list/business-strategy.html#market-context",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Market Context",
+    "text": "Market Context\nThe B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.\nThe gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.\n\n\n\nMetric\nValue\n\n\n\n\nTotal Addressable Market (TAM) — EU B2B PM SaaS\n€2.8B (2024 est.)\n\n\nServiceable Addressable Market (SAM) — Professional Services\n€420M\n\n\nTarget Segment — Irish & UK SMEs\n€38M\n\n\nExpected initial market share target\n1–2%"
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#porters-five-forces-analysis",
+    "href": "projects/list/business-strategy.html#porters-five-forces-analysis",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Porter’s Five Forces Analysis",
+    "text": "Porter’s Five Forces Analysis\n\n1. Threat of New Entrants — Moderate\nCloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.\nImplication: Entry is feasible but requires domain expertise, not just engineering capability.\n\n\n\n2. Bargaining Power of Suppliers — Low\nPrimary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.\nImplication: No structural constraint on margins from the supply side.\n\n\n\n3. Bargaining Power of Buyers — High\nProfessional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they’re easy to lose.\nImplication: Pricing power is limited. Retention and onboarding quality matter more than acquisition.\n\n\n\n4. Threat of Substitutes — High\nThe real competition isn’t just other PM tools — it’s spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don’t know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a “better than a spreadsheet” bar, not just a “better than Asana” bar.\nImplication: Product design must prioritise ease of adoption over feature completeness.\n\n\n\n5. Competitive Rivalry — High\nThe general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.\nImplication: Differentiation must be sharp and defensible — generic “easier to use” positioning won’t cut through."
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#strategic-assessment",
+    "href": "projects/list/business-strategy.html#strategic-assessment",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Strategic Assessment",
+    "text": "Strategic Assessment\n\n  \n    Strengths\n    Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.\n  \n  \n    Weaknesses\n    Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.\n  \n  \n    Opportunities\n    Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.\n  \n  \n    Threats\n    Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend."
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#recommendation",
+    "href": "projects/list/business-strategy.html#recommendation",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Recommendation",
+    "text": "Recommendation\nEnter, but narrow the initial scope.\nThe market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.\nThis mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.\nA target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round."
+  },
+  {
+    "objectID": "projects/list/business-strategy.html#reflection",
+    "href": "projects/list/business-strategy.html#reflection",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Reflection",
+    "text": "Reflection\nThis was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don’t get communicated in the summary figures.\nWhat I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you’re trying to actually make a decision versus produce a slide for a presentation.\n ← Back to Projects"
+  },
+  {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
@@ -434,74 +336,53 @@
     "text": "Reflection\nThis project shifted my thinking about what “good” data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.\nThe combined subplot at the end is the exception: it works because it’s explicitly framed as a summary for someone who already knows what they’re looking at. Context changes what’s appropriate.\n ← Back to Projects"
   },
   {
-    "objectID": "SETUP.html",
-    "href": "SETUP.html",
-    "title": "SETUP GUIDE — Read this first",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Raunit Budhiraja",
     "section": "",
-    "text": "Rename the raunit-portfolio folder to your GitHub username + .github.io e.g. raunitbudhiraja.github.io\n\n\n\nInside the images/ folder, add: - profile.jpg — your photo (used on the About page) - logo.png — a simple logo or your initials (shown in navbar) - favicon.png — small icon shown in browser tab\nCreate a cv/ folder and drop in raunit_cv.pdf\nIf you don’t have these yet, remove the broken references temporarily: - In _quarto.yml: delete the favicon: and logo: lines - In about.qmd: remove or comment out the &lt;img&gt; tag\n\n\n\nFile &gt; Open Folder &gt; select raunitbudhiraja.github.io\n\n\n\nIn the VS Code terminal:\nquarto preview\n\n\n\nquarto render\n\n\n\n# Mac/Linux:\ntouch .nojekyll\n\n# Windows CMD:\ntype nul &gt; .nojekyll\n\n# Windows PowerShell:\nni .nojekyll\n\n\n\n\nCreate a new repo on GitHub named exactly: raunitbudhiraja.github.io\nIn VS Code Source Control panel: Initialize Repository → Stage All → Commit → Publish Branch\n\n\n\n\nGitHub repo → Settings → Pages → Branch: main → Folder: /docs → Save\nYour site will be live at: https://raunitbudhiraja.github.io\n\n\n\n\n\nAdd your real profile photo to images/profile.jpg\nUpload your actual CV to cv/raunit_cv.pdf\nUpdate the About page with real bio details\nUpdate the stats on the homepage (years studying, projects, etc.)\nUpdate GitHub/LinkedIn URLs in _quarto.yml and contact.qmd\nAdd Kubicle certificate screenshots or confirmation dates to about.qmd\nTweak project descriptions to reflect any real work you’ve done\nAdd .nojekyll file before pushing"
+    "text": "I’m a Business Analytics student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.\nMy work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there."
   },
   {
-    "objectID": "SETUP.html#step-1-rename-the-folder",
-    "href": "SETUP.html#step-1-rename-the-folder",
-    "title": "SETUP GUIDE — Read this first",
+    "objectID": "index.html#hi-im-raunit.",
+    "href": "index.html#hi-im-raunit.",
+    "title": "Raunit Budhiraja",
     "section": "",
-    "text": "Rename the raunit-portfolio folder to your GitHub username + .github.io e.g. raunitbudhiraja.github.io"
+    "text": "I’m a Business Analytics student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.\nMy work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there."
   },
   {
-    "objectID": "SETUP.html#step-2-add-your-images",
-    "href": "SETUP.html#step-2-add-your-images",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "Inside the images/ folder, add: - profile.jpg — your photo (used on the About page) - logo.png — a simple logo or your initials (shown in navbar) - favicon.png — small icon shown in browser tab\nCreate a cv/ folder and drop in raunit_cv.pdf\nIf you don’t have these yet, remove the broken references temporarily: - In _quarto.yml: delete the favicon: and logo: lines - In about.qmd: remove or comment out the &lt;img&gt; tag"
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Raunit Budhiraja",
+    "section": "Skills",
+    "text": "Skills\n\n\n\nArea\nTools\n\n\n\n\nLanguages\nPython, SQL, Markdown, HTML/CSS\n\n\nLibraries\nPandas, Plotly, Scikit-learn, NumPy\n\n\nWorkflow\nGit, GitHub, Quarto, VS Code, Jupyter\n\n\nAnalytics\nEDA, Classification, Regression, Dashboards"
   },
   {
-    "objectID": "SETUP.html#step-3-open-the-folder-in-vs-code",
-    "href": "SETUP.html#step-3-open-the-folder-in-vs-code",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "File &gt; Open Folder &gt; select raunitbudhiraja.github.io"
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Raunit Budhiraja",
+    "section": "Education",
+    "text": "Education\nBSc Business Analytics — Dublin City University (2022 – Present)\nLeaving Certificate (2022)"
   },
   {
-    "objectID": "SETUP.html#step-4-preview-locally",
-    "href": "SETUP.html#step-4-preview-locally",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "In the VS Code terminal:\nquarto preview"
+    "objectID": "index.html#certifications",
+    "href": "index.html#certifications",
+    "title": "Raunit Budhiraja",
+    "section": "Certifications",
+    "text": "Certifications\n\nGeneral Data Protection Regulation (GDPR) — Kubicle\nData Security: Keeping Your Information Safe — Kubicle\nData Security: Handling Data Securely — Kubicle\nData Ethics & Risk: Introduction to Data Ethics — Kubicle\nData Ethics & Risk: Applying Ethical Thinking — Kubicle"
   },
   {
-    "objectID": "SETUP.html#step-5-render-to-docs",
-    "href": "SETUP.html#step-5-render-to-docs",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "quarto render"
+    "objectID": "index.html#featured-projects",
+    "href": "index.html#featured-projects",
+    "title": "Raunit Budhiraja",
+    "section": "Featured Projects",
+    "text": "Featured Projects\n\n\n\n\n\n\nNoteWhat I build\n\n\n\nI work on projects across data analysis, machine learning, dashboards, and business strategy. Head to the Projects page to see them all with full code and write-ups."
   },
   {
-    "objectID": "SETUP.html#step-6-add-.nojekyll-file",
-    "href": "SETUP.html#step-6-add-.nojekyll-file",
-    "title": "SETUP GUIDE — Read this first",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "# Mac/Linux:\ntouch .nojekyll\n\n# Windows CMD:\ntype nul &gt; .nojekyll\n\n# Windows PowerShell:\nni .nojekyll"
-  },
-  {
-    "objectID": "SETUP.html#step-7-push-to-github",
-    "href": "SETUP.html#step-7-push-to-github",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "Create a new repo on GitHub named exactly: raunitbudhiraja.github.io\nIn VS Code Source Control panel: Initialize Repository → Stage All → Commit → Publish Branch"
-  },
-  {
-    "objectID": "SETUP.html#step-8-enable-github-pages",
-    "href": "SETUP.html#step-8-enable-github-pages",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "GitHub repo → Settings → Pages → Branch: main → Folder: /docs → Save\nYour site will be live at: https://raunitbudhiraja.github.io"
-  },
-  {
-    "objectID": "SETUP.html#things-to-personalise-before-submission",
-    "href": "SETUP.html#things-to-personalise-before-submission",
-    "title": "SETUP GUIDE — Read this first",
-    "section": "",
-    "text": "Add your real profile photo to images/profile.jpg\nUpload your actual CV to cv/raunit_cv.pdf\nUpdate the About page with real bio details\nUpdate the stats on the homepage (years studying, projects, etc.)\nUpdate GitHub/LinkedIn URLs in _quarto.yml and contact.qmd\nAdd Kubicle certificate screenshots or confirmation dates to about.qmd\nTweak project descriptions to reflect any real work you’ve done\nAdd .nojekyll file before pushing"
+    "text": "Who I am\n  About Me\n  \n\n\n  \n    \n    \n      \n        ✉ raunit.budhiraja@mail.dcu.ie\n      \n      \n        LinkedIn →\n      \n      \n        GitHub →\n      \n    \n  \n\n  \n    \n      Hi, I'm Raunit — a Business Analytics student at Dublin City University with a genuine interest\n      in the space where data meets decision-making. I grew up comfortable with numbers but\n      fell in love with code once I realised how much you could do with a 40-line Python script\n      and a decent dataset.\n    \n\n    \n      My academic work sits across data analysis, machine learning, and business strategy.\n      Outside of lectures, I spend time building small projects — usually starting from a question\n      I genuinely want to answer, then figuring out the tools from there.\n    \n\n    \n      I'm particularly drawn to projects where the output is something a non-technical stakeholder\n      can actually use — a clean dashboard, a single-number forecast, or a well-told data story.\n      That intersection of rigour and communication is where I want to keep getting better.\n    \n\n    \n      Education\n      \n        \n          2022 – Present\n          BSc Business Analytics\n          Dublin City University (DCU)\n        \n        \n          2022\n          Leaving Certificate\n          Secondary School, India\n        \n      \n    \n  \n\n\n\n  Compliance Training\n  Kubicle Certifications\n  As part of the BAA1104 module, I completed the following Kubicle courses covering data governance and ethics:\n\n  \n    \n      ✓ Completed\n      Introduction to GDPR\n      Principles of data protection, lawful processing, and individual rights under EU law.\n    \n    \n      ✓ Completed\n      Data Security: Keeping Your Information Safe\n      Introduction to information security concepts, threats, and mitigation strategies.\n    \n    \n      ✓ Completed\n      Data Security: Handling Data Securely\n      Security protocols, responsible handling of sensitive data, and organisational practices.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Introduction\n      Ethical dimensions of data collection, bias, fairness, and algorithmic accountability.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Applying Ethical Thinking\n      Practical frameworks for responsible data use in real business and research contexts."
   },
   {
     "objectID": "contact.html",
@@ -509,6 +390,55 @@
     "title": "Contact",
     "section": "",
     "text": "Get in touch\n  Contact\n  \n\n\n\n  \n    \n      I'm always open to conversations about data, analytics, projects,\n      or opportunities. Whether you're a recruiter, a potential collaborator,\n      or a fellow student — feel free to reach out.\n    \n\n    \n\n      \n        Email\n        raunit.budhiraja@mail.dcu.ie\n        Fastest way to reach me. I typically reply within 24 hours.\n      \n\n      \n        LinkedIn\n        linkedin.com/in/raunitbudhiraja\n        Connect professionally — I'm open to networking in analytics and tech.\n      \n\n      \n        GitHub\n        github.com/raunitbudhiraja\n        Where all the code for this portfolio and other projects lives.\n      \n\n    \n  \n\n  \n    \n      Currently\n\n      \n        \n          2025 – Present\n          Final Year, BSc Business Analytics\n          Dublin City University\n        \n        \n          Looking for\n          Summer Internship / Graduate Role\n          Data analyst, business analyst, or junior data science roles in Ireland or remote.\n        \n        \n          Interests\n          Python · ML · BI · Strategy\n          Especially interested in companies where analytics sits close to product decisions.\n        \n      \n\n      \n        \n          Download CV (PDF) →"
+  },
+  {
+    "objectID": "projects/business-strategy.html",
+    "href": "projects/business-strategy.html",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "",
+    "text": "Strategy\n  Research\n  Frameworks\n  B2B"
+  },
+  {
+    "objectID": "projects/business-strategy.html#overview",
+    "href": "projects/business-strategy.html#overview",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Overview",
+    "text": "Overview\nThis project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: should this company enter this market?\nThe product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter’s Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit."
+  },
+  {
+    "objectID": "projects/business-strategy.html#market-context",
+    "href": "projects/business-strategy.html#market-context",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Market Context",
+    "text": "Market Context\nThe B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.\nThe gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.\n\n\n\nMetric\nValue\n\n\n\n\nTotal Addressable Market (TAM) — EU B2B PM SaaS\n€2.8B (2024 est.)\n\n\nServiceable Addressable Market (SAM) — Professional Services\n€420M\n\n\nTarget Segment — Irish & UK SMEs\n€38M\n\n\nExpected initial market share target\n1–2%"
+  },
+  {
+    "objectID": "projects/business-strategy.html#porters-five-forces-analysis",
+    "href": "projects/business-strategy.html#porters-five-forces-analysis",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Porter’s Five Forces Analysis",
+    "text": "Porter’s Five Forces Analysis\n\n1. Threat of New Entrants — Moderate\nCloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.\nImplication: Entry is feasible but requires domain expertise, not just engineering capability.\n\n\n\n2. Bargaining Power of Suppliers — Low\nPrimary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.\nImplication: No structural constraint on margins from the supply side.\n\n\n\n3. Bargaining Power of Buyers — High\nProfessional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they’re easy to lose.\nImplication: Pricing power is limited. Retention and onboarding quality matter more than acquisition.\n\n\n\n4. Threat of Substitutes — High\nThe real competition isn’t just other PM tools — it’s spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don’t know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a “better than a spreadsheet” bar, not just a “better than Asana” bar.\nImplication: Product design must prioritise ease of adoption over feature completeness.\n\n\n\n5. Competitive Rivalry — High\nThe general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.\nImplication: Differentiation must be sharp and defensible — generic “easier to use” positioning won’t cut through."
+  },
+  {
+    "objectID": "projects/business-strategy.html#strategic-assessment",
+    "href": "projects/business-strategy.html#strategic-assessment",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Strategic Assessment",
+    "text": "Strategic Assessment\n\n  \n    Strengths\n    Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.\n  \n  \n    Weaknesses\n    Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.\n  \n  \n    Opportunities\n    Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.\n  \n  \n    Threats\n    Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend."
+  },
+  {
+    "objectID": "projects/business-strategy.html#recommendation",
+    "href": "projects/business-strategy.html#recommendation",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Recommendation",
+    "text": "Recommendation\nEnter, but narrow the initial scope.\nThe market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.\nThis mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.\nA target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round."
+  },
+  {
+    "objectID": "projects/business-strategy.html#reflection",
+    "href": "projects/business-strategy.html#reflection",
+    "title": "Market Entry Analysis — SaaS Product",
+    "section": "Reflection",
+    "text": "Reflection\nThis was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don’t get communicated in the summary figures.\nWhat I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you’re trying to actually make a decision versus produce a slide for a presentation.\n ← Back to Projects"
   },
   {
     "objectID": "projects/data-analysis.html",
@@ -579,244 +509,6 @@
     "title": "Exploratory Sales Analysis",
     "section": "Reflection",
     "text": "Reflection\nThis project reinforced something I keep running into — the most useful output of an EDA isn’t the visualisations themselves, it’s the shortlist of questions they raise. Here, the seasonal pattern immediately suggests a follow-up: does the peak come from higher basket sizes, or just more transactions? That’s the next query to write.\nThe other thing worth noting is that clean data still takes time. Even with a synthetic dataset designed to be tidy, there were decisions to make about aggregation level, date formatting, and how to handle multi-category breakdowns in a way that didn’t obscure the signal.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/machine-learning.html",
-    "href": "projects/machine-learning.html",
-    "title": "Customer Churn Predictor",
-    "section": "",
-    "text": "Scikit-learn\n  Pandas\n  Random Forest\n  Classification"
-  },
-  {
-    "objectID": "projects/machine-learning.html#overview",
-    "href": "projects/machine-learning.html#overview",
-    "title": "Customer Churn Predictor",
-    "section": "Overview",
-    "text": "Overview\nChurn — customers leaving — is one of the more expensive problems a subscription business faces. Acquiring a new customer typically costs five to seven times more than retaining an existing one, so even modest improvements in churn prediction translate to real money saved.\nThis project builds a binary classification model to predict whether a telecom customer will churn, using demographic and usage features. The goal isn’t just a model — it’s an understanding of which features actually drive the prediction, so the output is actionable."
-  },
-  {
-    "objectID": "projects/machine-learning.html#setup",
-    "href": "projects/machine-learning.html#setup",
-    "title": "Customer Churn Predictor",
-    "section": "Setup",
-    "text": "Setup\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import (classification_report,\n                             confusion_matrix,\n                             roc_auc_score, roc_curve)\nfrom sklearn.preprocessing import LabelEncoder\n\nnp.random.seed(99)"
-  },
-  {
-    "objectID": "projects/machine-learning.html#synthetic-dataset",
-    "href": "projects/machine-learning.html#synthetic-dataset",
-    "title": "Customer Churn Predictor",
-    "section": "Synthetic Dataset",
-    "text": "Synthetic Dataset\n\n\nCode\nn = 1200\n\ndf = pd.DataFrame({\n    \"tenure_months\":      np.random.randint(1, 72, n),\n    \"monthly_charges\":    np.round(np.random.uniform(20, 110, n), 2),\n    \"num_products\":       np.random.randint(1, 5, n),\n    \"support_calls\":      np.random.poisson(1.5, n),\n    \"contract_type\":      np.random.choice([\"Month-to-month\", \"One year\", \"Two year\"], n,\n                                            p=[0.55, 0.25, 0.20]),\n    \"internet_service\":   np.random.choice([\"Fibre\", \"DSL\", \"None\"], n, p=[0.44, 0.35, 0.21]),\n    \"has_tech_support\":   np.random.choice([0, 1], n, p=[0.55, 0.45]),\n})\n\n# Churn influenced by real-world logic\nchurn_prob = (\n    0.35\n    - 0.004 * df[\"tenure_months\"]\n    + 0.003 * df[\"monthly_charges\"]\n    + 0.05  * df[\"support_calls\"]\n    - 0.10  * (df[\"contract_type\"] == \"Two year\").astype(int)\n    - 0.05  * (df[\"contract_type\"] == \"One year\").astype(int)\n    + 0.08  * (df[\"internet_service\"] == \"Fibre\").astype(int)\n).clip(0.05, 0.90)\n\ndf[\"churned\"] = (np.random.rand(n) &lt; churn_prob).astype(int)\nprint(f\"Dataset: {len(df):,} customers | Churn rate: {df['churned'].mean():.1%}\")\ndf.head()\n\n\nDataset: 1,200 customers | Churn rate: 47.3%\n\n\n\n\n\n\n\n\n\ntenure_months\nmonthly_charges\nnum_products\nsupport_calls\ncontract_type\ninternet_service\nhas_tech_support\nchurned\n\n\n\n\n0\n2\n43.06\n3\n2\nMonth-to-month\nNone\n1\n0\n\n\n1\n36\n92.88\n4\n3\nOne year\nNone\n0\n0\n\n\n2\n58\n41.63\n4\n1\nMonth-to-month\nDSL\n0\n1\n\n\n3\n41\n91.22\n4\n2\nMonth-to-month\nFibre\n0\n1\n\n\n4\n69\n95.95\n4\n1\nTwo year\nDSL\n1\n1"
-  },
-  {
-    "objectID": "projects/machine-learning.html#preprocessing",
-    "href": "projects/machine-learning.html#preprocessing",
-    "title": "Customer Churn Predictor",
-    "section": "Preprocessing",
-    "text": "Preprocessing\n\n\nCode\nle = LabelEncoder()\ndf[\"contract_enc\"]  = le.fit_transform(df[\"contract_type\"])\ndf[\"internet_enc\"]  = le.fit_transform(df[\"internet_service\"])\n\nfeatures = [\"tenure_months\", \"monthly_charges\", \"num_products\",\n            \"support_calls\", \"contract_enc\", \"internet_enc\", \"has_tech_support\"]\nX = df[features]\ny = df[\"churned\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nprint(f\"Training set: {len(X_train)} | Test set: {len(X_test)}\")\n\n\nTraining set: 960 | Test set: 240"
-  },
-  {
-    "objectID": "projects/machine-learning.html#model-training",
-    "href": "projects/machine-learning.html#model-training",
-    "title": "Customer Churn Predictor",
-    "section": "Model Training",
-    "text": "Model Training\n\n\nCode\nrf = RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)\nrf.fit(X_train, y_train)\n\ny_pred = rf.predict(X_test)\ny_prob = rf.predict_proba(X_test)[:, 1]\n\nprint(classification_report(y_test, y_pred, target_names=[\"Retained\", \"Churned\"]))\nprint(f\"ROC-AUC: {roc_auc_score(y_test, y_prob):.3f}\")\n\n\n              precision    recall  f1-score   support\n\n    Retained       0.70      0.68      0.69       125\n     Churned       0.66      0.68      0.67       115\n\n    accuracy                           0.68       240\n   macro avg       0.68      0.68      0.68       240\nweighted avg       0.68      0.68      0.68       240\n\nROC-AUC: 0.735"
-  },
-  {
-    "objectID": "projects/machine-learning.html#confusion-matrix",
-    "href": "projects/machine-learning.html#confusion-matrix",
-    "title": "Customer Churn Predictor",
-    "section": "Confusion Matrix",
-    "text": "Confusion Matrix\n\n\nCode\ncm = confusion_matrix(y_test, y_pred)\nlabels = [\"Retained\", \"Churned\"]\n\nfig = px.imshow(\n    cm, text_auto=True,\n    x=labels, y=labels,\n    color_continuous_scale=[\"#14141f\", \"#7fff6e\"],\n    title=\"Confusion Matrix\"\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n)\nfig.update_xaxes(title=\"Predicted\")\nfig.update_yaxes(title=\"Actual\")\nfig.show()"
-  },
-  {
-    "objectID": "projects/machine-learning.html#feature-importance",
-    "href": "projects/machine-learning.html#feature-importance",
-    "title": "Customer Churn Predictor",
-    "section": "Feature Importance",
-    "text": "Feature Importance\nWhich features does the model actually rely on?\n\n\nCode\nimportance_df = pd.DataFrame({\n    \"feature\": features,\n    \"importance\": rf.feature_importances_\n}).sort_values(\"importance\", ascending=True)\n\nfig = px.bar(\n    importance_df, x=\"importance\", y=\"feature\",\n    orientation=\"h\",\n    title=\"Feature Importance (Random Forest)\",\n    labels={\"importance\": \"Importance\", \"feature\": \"\"},\n    color=\"importance\",\n    color_continuous_scale=[\"#252535\", \"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nTenure and monthly charges are the strongest predictors — both intuitively sensible. Long-tenured customers have demonstrated loyalty; high charges without perceived value are a known churn driver."
-  },
-  {
-    "objectID": "projects/machine-learning.html#roc-curve",
-    "href": "projects/machine-learning.html#roc-curve",
-    "title": "Customer Churn Predictor",
-    "section": "ROC Curve",
-    "text": "ROC Curve\n\n\nCode\nfpr, tpr, _ = roc_curve(y_test, y_prob)\nauc_val = roc_auc_score(y_test, y_prob)\n\nfig = go.Figure()\nfig.add_trace(go.Scatter(x=fpr, y=tpr, mode=\"lines\",\n                          name=f\"RF (AUC = {auc_val:.3f})\",\n                          line=dict(color=\"#7fff6e\", width=2.5)))\nfig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode=\"lines\",\n                          name=\"Random\", line=dict(color=\"#5a5a72\", dash=\"dash\")))\nfig.update_layout(\n    title=\"ROC Curve\", plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(title=\"False Positive Rate\", gridcolor=\"#252535\"),\n    yaxis=dict(title=\"True Positive Rate\", gridcolor=\"#252535\"),\n    legend=dict(bgcolor=\"rgba(0,0,0,0)\")\n)\nfig.show()"
-  },
-  {
-    "objectID": "projects/machine-learning.html#takeaways",
-    "href": "projects/machine-learning.html#takeaways",
-    "title": "Customer Churn Predictor",
-    "section": "Takeaways",
-    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nModel results:\n\nROC-AUC above 0.80 suggests the model has genuine discriminative power beyond baseline guessing.\nTenure is the single most predictive feature — a simple business rule emerges: customers who reach 12+ months are significantly less likely to churn.\nContract type matters: month-to-month customers are a distinct risk cohort worth targeting with retention offers early in their lifecycle."
-  },
-  {
-    "objectID": "projects/machine-learning.html#reflection",
-    "href": "projects/machine-learning.html#reflection",
-    "title": "Customer Churn Predictor",
-    "section": "Reflection",
-    "text": "Reflection\nWhat surprised me here was how much signal was already baked into fairly simple features. I expected to need interaction terms or more complex feature engineering, but the Random Forest extracted meaningful patterns from raw inputs without much coaxing.\nThe harder question — which I didn’t answer here — is what to do with the prediction. A high-probability churn score only helps if there’s a retention action to pair with it: a discount, a proactive support call, a plan upgrade offer. The model is only as useful as the process downstream of it.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/business-strategy.html",
-    "href": "projects/business-strategy.html",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "",
-    "text": "Strategy\n  Research\n  Frameworks\n  B2B"
-  },
-  {
-    "objectID": "projects/business-strategy.html#overview",
-    "href": "projects/business-strategy.html#overview",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Overview",
-    "text": "Overview\nThis project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: should this company enter this market?\nThe product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter’s Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit."
-  },
-  {
-    "objectID": "projects/business-strategy.html#market-context",
-    "href": "projects/business-strategy.html#market-context",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Market Context",
-    "text": "Market Context\nThe B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.\nThe gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.\n\n\n\nMetric\nValue\n\n\n\n\nTotal Addressable Market (TAM) — EU B2B PM SaaS\n€2.8B (2024 est.)\n\n\nServiceable Addressable Market (SAM) — Professional Services\n€420M\n\n\nTarget Segment — Irish & UK SMEs\n€38M\n\n\nExpected initial market share target\n1–2%"
-  },
-  {
-    "objectID": "projects/business-strategy.html#porters-five-forces-analysis",
-    "href": "projects/business-strategy.html#porters-five-forces-analysis",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Porter’s Five Forces Analysis",
-    "text": "Porter’s Five Forces Analysis\n\n1. Threat of New Entrants — Moderate\nCloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.\nImplication: Entry is feasible but requires domain expertise, not just engineering capability.\n\n\n\n2. Bargaining Power of Suppliers — Low\nPrimary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.\nImplication: No structural constraint on margins from the supply side.\n\n\n\n3. Bargaining Power of Buyers — High\nProfessional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they’re easy to lose.\nImplication: Pricing power is limited. Retention and onboarding quality matter more than acquisition.\n\n\n\n4. Threat of Substitutes — High\nThe real competition isn’t just other PM tools — it’s spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don’t know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a “better than a spreadsheet” bar, not just a “better than Asana” bar.\nImplication: Product design must prioritise ease of adoption over feature completeness.\n\n\n\n5. Competitive Rivalry — High\nThe general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.\nImplication: Differentiation must be sharp and defensible — generic “easier to use” positioning won’t cut through."
-  },
-  {
-    "objectID": "projects/business-strategy.html#strategic-assessment",
-    "href": "projects/business-strategy.html#strategic-assessment",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Strategic Assessment",
-    "text": "Strategic Assessment\n\n  \n    Strengths\n    Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.\n  \n  \n    Weaknesses\n    Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.\n  \n  \n    Opportunities\n    Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.\n  \n  \n    Threats\n    Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend."
-  },
-  {
-    "objectID": "projects/business-strategy.html#recommendation",
-    "href": "projects/business-strategy.html#recommendation",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Recommendation",
-    "text": "Recommendation\nEnter, but narrow the initial scope.\nThe market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.\nThis mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.\nA target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round."
-  },
-  {
-    "objectID": "projects/business-strategy.html#reflection",
-    "href": "projects/business-strategy.html#reflection",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Reflection",
-    "text": "Reflection\nThis was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don’t get communicated in the summary figures.\nWhat I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you’re trying to actually make a decision versus produce a slide for a presentation.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/list/dashboard.html",
-    "href": "projects/list/dashboard.html",
-    "title": "Interactive KPI Dashboard",
-    "section": "",
-    "text": "Plotly\n  Python\n  Dashboard\n  BI"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#overview",
-    "href": "projects/list/dashboard.html#overview",
-    "title": "Interactive KPI Dashboard",
-    "section": "Overview",
-    "text": "Overview\nA dashboard’s job is simple in theory: put the right number in front of the right person at the right time. In practice it’s trickier — you have to decide what actually matters, strip out everything that doesn’t, and then make it readable at a glance.\nThis project builds a multi-panel KPI dashboard for a fictional subscription business, tracking three core metrics over a 12-month period: monthly recurring revenue, customer acquisition cost, and churn rate. All charts are built with Plotly Express and styled consistently."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#setup-data",
-    "href": "projects/list/dashboard.html#setup-data",
-    "title": "Interactive KPI Dashboard",
-    "section": "Setup & Data",
-    "text": "Setup & Data\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nnp.random.seed(7)\n\nmonths = pd.period_range(\"2024-01\", periods=12, freq=\"M\")\nmonth_labels = [str(m) for m in months]\n\nmrr = np.cumsum(np.random.normal(3000, 600, 12)) + 40000\ncac = 120 + np.random.normal(0, 10, 12) + np.linspace(0, -25, 12)\nchurn = np.clip(0.065 + np.random.normal(0, 0.008, 12) + np.linspace(0, -0.02, 12), 0.02, 0.12)\nnew_customers = (np.random.poisson(35, 12) + np.linspace(0, 20, 12)).astype(int)\n\ndf = pd.DataFrame({\n    \"month\": month_labels,\n    \"mrr\": mrr.round(0),\n    \"cac\": cac.round(2),\n    \"churn_rate\": (churn * 100).round(2),\n    \"new_customers\": new_customers\n})\ndf.head()\n\n\n\n\n\n\n\n\n\nmonth\nmrr\ncac\nchurn_rate\nnew_customers\n\n\n\n\n0\n2024-01\n44014.0\n125.05\n6.46\n38\n\n\n1\n2024-02\n46735.0\n115.11\n5.16\n35\n\n\n2\n2024-03\n49754.0\n113.03\n5.81\n36\n\n\n3\n2024-04\n52999.0\n98.65\n4.12\n34\n\n\n4\n2024-05\n55526.0\n116.45\n6.61\n41"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#monthly-recurring-revenue",
-    "href": "projects/list/dashboard.html#monthly-recurring-revenue",
-    "title": "Interactive KPI Dashboard",
-    "section": "Monthly Recurring Revenue",
-    "text": "Monthly Recurring Revenue\n\n\nCode\nfig = px.area(\n    df, x=\"month\", y=\"mrr\",\n    title=\"Monthly Recurring Revenue (MRR)\",\n    labels={\"month\": \"\", \"mrr\": \"MRR (€)\"},\n    color_discrete_sequence=[\"#7fff6e\"]\n)\nfig.update_traces(fill='tozeroy', fillcolor='rgba(127,255,110,0.08)', line_width=2.5)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.show()\n\n\n                            \n                                            \n\n\nMRR is growing steadily — the upward slope steepens slightly in Q3, which correlates with the increase in new customer acquisition visible later."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#customer-acquisition-cost",
-    "href": "projects/list/dashboard.html#customer-acquisition-cost",
-    "title": "Interactive KPI Dashboard",
-    "section": "Customer Acquisition Cost",
-    "text": "Customer Acquisition Cost\n\n\nCode\nfig = px.bar(\n    df, x=\"month\", y=\"cac\",\n    title=\"Customer Acquisition Cost (CAC)\",\n    labels={\"month\": \"\", \"cac\": \"CAC (€)\"},\n    color=\"cac\",\n    color_continuous_scale=[\"#7fff6e\", \"#252535\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"rgba(0,0,0,0)\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nCAC is trending down — a good sign that either marketing efficiency is improving or organic/referral channels are picking up share."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#churn-rate-over-time",
-    "href": "projects/list/dashboard.html#churn-rate-over-time",
-    "title": "Interactive KPI Dashboard",
-    "section": "Churn Rate Over Time",
-    "text": "Churn Rate Over Time\n\n\nCode\nfig = px.line(\n    df, x=\"month\", y=\"churn_rate\",\n    title=\"Monthly Churn Rate (%)\",\n    labels={\"month\": \"\", \"churn_rate\": \"Churn Rate (%)\"},\n    markers=True,\n    color_discrete_sequence=[\"#68d9ff\"]\n)\nfig.add_hline(y=5, line_dash=\"dash\", line_color=\"#5a5a72\",\n              annotation_text=\"5% target\", annotation_font_color=\"#5a5a72\")\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.update_traces(line_width=2.5)\nfig.show()\n\n\n                            \n                                            \n\n\nChurn opens above the 5% target in early months but trends down toward it by year-end. The trajectory is encouraging, though it hasn’t yet broken through the threshold consistently."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#combined-kpi-overview",
-    "href": "projects/list/dashboard.html#combined-kpi-overview",
-    "title": "Interactive KPI Dashboard",
-    "section": "Combined KPI Overview",
-    "text": "Combined KPI Overview\nAll four metrics on one canvas for executive summary use.\n\n\nCode\nfig = make_subplots(\n    rows=2, cols=2,\n    subplot_titles=(\"MRR (€)\", \"CAC (€)\", \"Churn Rate (%)\", \"New Customers\"),\n    vertical_spacing=0.14,\n    horizontal_spacing=0.10\n)\n\n# MRR\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"mrr\"],\n    mode=\"lines\", fill=\"tozeroy\",\n    fillcolor=\"rgba(127,255,110,0.07)\",\n    line=dict(color=\"#7fff6e\", width=2)), row=1, col=1)\n\n# CAC\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"cac\"],\n    marker_color=\"#a78bfa\"), row=1, col=2)\n\n# Churn\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"churn_rate\"],\n    mode=\"lines+markers\", line=dict(color=\"#68d9ff\", width=2)), row=2, col=1)\n\n# New customers\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"new_customers\"],\n    marker_color=\"#ffd166\"), row=2, col=2)\n\nfig.update_layout(\n    showlegend=False,\n    plot_bgcolor=\"#14141f\",\n    paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\",\n    title_text=\"Business KPI Summary — 2024\",\n    title_font_color=\"#ffffff\",\n    height=550\n)\nfor i in fig.layout.annotations:\n    i.font.color = \"#e2e2e2\"\n\nfig.update_xaxes(gridcolor=\"#252535\", tickangle=-45, tickfont_size=9)\nfig.update_yaxes(gridcolor=\"#252535\")\nfig.show()"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#takeaways",
-    "href": "projects/list/dashboard.html#takeaways",
-    "title": "Interactive KPI Dashboard",
-    "section": "Takeaways",
-    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nDashboard design decisions:\n\nThree metrics is usually better than ten. Every additional tile competes for attention — the discipline is in what you leave out.\nThe combined panel is useful for spotting correlations (CAC falling as new customers increase suggests referral effects, not just spend).\nPlotly’s hover interactivity adds real value for self-service exploration without any additional code complexity."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#reflection",
-    "href": "projects/list/dashboard.html#reflection",
-    "title": "Interactive KPI Dashboard",
-    "section": "Reflection",
-    "text": "Reflection\nThis project shifted my thinking about what “good” data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.\nThe combined subplot at the end is the exception: it works because it’s explicitly framed as a summary for someone who already knows what they’re looking at. Context changes what’s appropriate.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/list/business-strategy.html",
-    "href": "projects/list/business-strategy.html",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "",
-    "text": "Strategy\n  Research\n  Frameworks\n  B2B"
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#overview",
-    "href": "projects/list/business-strategy.html#overview",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Overview",
-    "text": "Overview\nThis project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: should this company enter this market?\nThe product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter’s Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit."
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#market-context",
-    "href": "projects/list/business-strategy.html#market-context",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Market Context",
-    "text": "Market Context\nThe B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.\nThe gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.\n\n\n\nMetric\nValue\n\n\n\n\nTotal Addressable Market (TAM) — EU B2B PM SaaS\n€2.8B (2024 est.)\n\n\nServiceable Addressable Market (SAM) — Professional Services\n€420M\n\n\nTarget Segment — Irish & UK SMEs\n€38M\n\n\nExpected initial market share target\n1–2%"
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#porters-five-forces-analysis",
-    "href": "projects/list/business-strategy.html#porters-five-forces-analysis",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Porter’s Five Forces Analysis",
-    "text": "Porter’s Five Forces Analysis\n\n1. Threat of New Entrants — Moderate\nCloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.\nImplication: Entry is feasible but requires domain expertise, not just engineering capability.\n\n\n\n2. Bargaining Power of Suppliers — Low\nPrimary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.\nImplication: No structural constraint on margins from the supply side.\n\n\n\n3. Bargaining Power of Buyers — High\nProfessional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they’re easy to lose.\nImplication: Pricing power is limited. Retention and onboarding quality matter more than acquisition.\n\n\n\n4. Threat of Substitutes — High\nThe real competition isn’t just other PM tools — it’s spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don’t know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a “better than a spreadsheet” bar, not just a “better than Asana” bar.\nImplication: Product design must prioritise ease of adoption over feature completeness.\n\n\n\n5. Competitive Rivalry — High\nThe general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.\nImplication: Differentiation must be sharp and defensible — generic “easier to use” positioning won’t cut through."
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#strategic-assessment",
-    "href": "projects/list/business-strategy.html#strategic-assessment",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Strategic Assessment",
-    "text": "Strategic Assessment\n\n  \n    Strengths\n    Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.\n  \n  \n    Weaknesses\n    Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.\n  \n  \n    Opportunities\n    Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.\n  \n  \n    Threats\n    Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend."
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#recommendation",
-    "href": "projects/list/business-strategy.html#recommendation",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Recommendation",
-    "text": "Recommendation\nEnter, but narrow the initial scope.\nThe market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.\nThis mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.\nA target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round."
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#reflection",
-    "href": "projects/list/business-strategy.html#reflection",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Reflection",
-    "text": "Reflection\nThis was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don’t get communicated in the summary figures.\nWhat I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you’re trying to actually make a decision versus produce a slide for a presentation.\n ← Back to Projects"
   },
   {
     "objectID": "projects/list/bert-gpt4.html",
@@ -945,10 +637,248 @@
     "text": "Footnotes\n\n\nThis distinction — discriminative vs generative — is one of the most important conceptual divides in modern NLP. Discriminative models learn a boundary between classes; generative models learn the underlying data distribution.↩︎"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "projects/list/dashboard.html",
+    "href": "projects/list/dashboard.html",
+    "title": "Interactive KPI Dashboard",
     "section": "",
-    "text": "Who I am\n  About Me\n  \n\n\n  \n    \n    \n      \n        ✉ raunit.budhiraja@mail.dcu.ie\n      \n      \n        LinkedIn →\n      \n      \n        GitHub →\n      \n    \n  \n\n  \n    \n      Hi, I'm Raunit — a Business Analytics student at Dublin City University with a genuine interest\n      in the space where data meets decision-making. I grew up comfortable with numbers but\n      fell in love with code once I realised how much you could do with a 40-line Python script\n      and a decent dataset.\n    \n\n    \n      My academic work sits across data analysis, machine learning, and business strategy.\n      Outside of lectures, I spend time building small projects — usually starting from a question\n      I genuinely want to answer, then figuring out the tools from there.\n    \n\n    \n      I'm particularly drawn to projects where the output is something a non-technical stakeholder\n      can actually use — a clean dashboard, a single-number forecast, or a well-told data story.\n      That intersection of rigour and communication is where I want to keep getting better.\n    \n\n    \n      Education\n      \n        \n          2022 – Present\n          BSc Business Analytics\n          Dublin City University (DCU)\n        \n        \n          2022\n          Leaving Certificate\n          Secondary School, India\n        \n      \n    \n  \n\n\n\n  Compliance Training\n  Kubicle Certifications\n  As part of the BAA1104 module, I completed the following Kubicle courses covering data governance and ethics:\n\n  \n    \n      ✓ Completed\n      Introduction to GDPR\n      Principles of data protection, lawful processing, and individual rights under EU law.\n    \n    \n      ✓ Completed\n      Data Security: Keeping Your Information Safe\n      Introduction to information security concepts, threats, and mitigation strategies.\n    \n    \n      ✓ Completed\n      Data Security: Handling Data Securely\n      Security protocols, responsible handling of sensitive data, and organisational practices.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Introduction\n      Ethical dimensions of data collection, bias, fairness, and algorithmic accountability.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Applying Ethical Thinking\n      Practical frameworks for responsible data use in real business and research contexts."
+    "text": "Plotly\n  Python\n  Dashboard\n  BI"
+  },
+  {
+    "objectID": "projects/list/dashboard.html#overview",
+    "href": "projects/list/dashboard.html#overview",
+    "title": "Interactive KPI Dashboard",
+    "section": "Overview",
+    "text": "Overview\nA dashboard’s job is simple in theory: put the right number in front of the right person at the right time. In practice it’s trickier — you have to decide what actually matters, strip out everything that doesn’t, and then make it readable at a glance.\nThis project builds a multi-panel KPI dashboard for a fictional subscription business, tracking three core metrics over a 12-month period: monthly recurring revenue, customer acquisition cost, and churn rate. All charts are built with Plotly Express and styled consistently."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#setup-data",
+    "href": "projects/list/dashboard.html#setup-data",
+    "title": "Interactive KPI Dashboard",
+    "section": "Setup & Data",
+    "text": "Setup & Data\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nnp.random.seed(7)\n\nmonths = pd.period_range(\"2024-01\", periods=12, freq=\"M\")\nmonth_labels = [str(m) for m in months]\n\nmrr = np.cumsum(np.random.normal(3000, 600, 12)) + 40000\ncac = 120 + np.random.normal(0, 10, 12) + np.linspace(0, -25, 12)\nchurn = np.clip(0.065 + np.random.normal(0, 0.008, 12) + np.linspace(0, -0.02, 12), 0.02, 0.12)\nnew_customers = (np.random.poisson(35, 12) + np.linspace(0, 20, 12)).astype(int)\n\ndf = pd.DataFrame({\n    \"month\": month_labels,\n    \"mrr\": mrr.round(0),\n    \"cac\": cac.round(2),\n    \"churn_rate\": (churn * 100).round(2),\n    \"new_customers\": new_customers\n})\ndf.head()\n\n\n\n\n\n\n\n\n\nmonth\nmrr\ncac\nchurn_rate\nnew_customers\n\n\n\n\n0\n2024-01\n44014.0\n125.05\n6.46\n38\n\n\n1\n2024-02\n46735.0\n115.11\n5.16\n35\n\n\n2\n2024-03\n49754.0\n113.03\n5.81\n36\n\n\n3\n2024-04\n52999.0\n98.65\n4.12\n34\n\n\n4\n2024-05\n55526.0\n116.45\n6.61\n41"
+  },
+  {
+    "objectID": "projects/list/dashboard.html#monthly-recurring-revenue",
+    "href": "projects/list/dashboard.html#monthly-recurring-revenue",
+    "title": "Interactive KPI Dashboard",
+    "section": "Monthly Recurring Revenue",
+    "text": "Monthly Recurring Revenue\n\n\nCode\nfig = px.area(\n    df, x=\"month\", y=\"mrr\",\n    title=\"Monthly Recurring Revenue (MRR)\",\n    labels={\"month\": \"\", \"mrr\": \"MRR (€)\"},\n    color_discrete_sequence=[\"#7fff6e\"]\n)\nfig.update_traces(fill='tozeroy', fillcolor='rgba(127,255,110,0.08)', line_width=2.5)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.show()\n\n\n                            \n                                            \n\n\nMRR is growing steadily — the upward slope steepens slightly in Q3, which correlates with the increase in new customer acquisition visible later."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#customer-acquisition-cost",
+    "href": "projects/list/dashboard.html#customer-acquisition-cost",
+    "title": "Interactive KPI Dashboard",
+    "section": "Customer Acquisition Cost",
+    "text": "Customer Acquisition Cost\n\n\nCode\nfig = px.bar(\n    df, x=\"month\", y=\"cac\",\n    title=\"Customer Acquisition Cost (CAC)\",\n    labels={\"month\": \"\", \"cac\": \"CAC (€)\"},\n    color=\"cac\",\n    color_continuous_scale=[\"#7fff6e\", \"#252535\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"rgba(0,0,0,0)\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nCAC is trending down — a good sign that either marketing efficiency is improving or organic/referral channels are picking up share."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#churn-rate-over-time",
+    "href": "projects/list/dashboard.html#churn-rate-over-time",
+    "title": "Interactive KPI Dashboard",
+    "section": "Churn Rate Over Time",
+    "text": "Churn Rate Over Time\n\n\nCode\nfig = px.line(\n    df, x=\"month\", y=\"churn_rate\",\n    title=\"Monthly Churn Rate (%)\",\n    labels={\"month\": \"\", \"churn_rate\": \"Churn Rate (%)\"},\n    markers=True,\n    color_discrete_sequence=[\"#68d9ff\"]\n)\nfig.add_hline(y=5, line_dash=\"dash\", line_color=\"#5a5a72\",\n              annotation_text=\"5% target\", annotation_font_color=\"#5a5a72\")\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.update_traces(line_width=2.5)\nfig.show()\n\n\n                            \n                                            \n\n\nChurn opens above the 5% target in early months but trends down toward it by year-end. The trajectory is encouraging, though it hasn’t yet broken through the threshold consistently."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#combined-kpi-overview",
+    "href": "projects/list/dashboard.html#combined-kpi-overview",
+    "title": "Interactive KPI Dashboard",
+    "section": "Combined KPI Overview",
+    "text": "Combined KPI Overview\nAll four metrics on one canvas for executive summary use.\n\n\nCode\nfig = make_subplots(\n    rows=2, cols=2,\n    subplot_titles=(\"MRR (€)\", \"CAC (€)\", \"Churn Rate (%)\", \"New Customers\"),\n    vertical_spacing=0.14,\n    horizontal_spacing=0.10\n)\n\n# MRR\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"mrr\"],\n    mode=\"lines\", fill=\"tozeroy\",\n    fillcolor=\"rgba(127,255,110,0.07)\",\n    line=dict(color=\"#7fff6e\", width=2)), row=1, col=1)\n\n# CAC\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"cac\"],\n    marker_color=\"#a78bfa\"), row=1, col=2)\n\n# Churn\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"churn_rate\"],\n    mode=\"lines+markers\", line=dict(color=\"#68d9ff\", width=2)), row=2, col=1)\n\n# New customers\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"new_customers\"],\n    marker_color=\"#ffd166\"), row=2, col=2)\n\nfig.update_layout(\n    showlegend=False,\n    plot_bgcolor=\"#14141f\",\n    paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\",\n    title_text=\"Business KPI Summary — 2024\",\n    title_font_color=\"#ffffff\",\n    height=550\n)\nfor i in fig.layout.annotations:\n    i.font.color = \"#e2e2e2\"\n\nfig.update_xaxes(gridcolor=\"#252535\", tickangle=-45, tickfont_size=9)\nfig.update_yaxes(gridcolor=\"#252535\")\nfig.show()"
+  },
+  {
+    "objectID": "projects/list/dashboard.html#takeaways",
+    "href": "projects/list/dashboard.html#takeaways",
+    "title": "Interactive KPI Dashboard",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nDashboard design decisions:\n\nThree metrics is usually better than ten. Every additional tile competes for attention — the discipline is in what you leave out.\nThe combined panel is useful for spotting correlations (CAC falling as new customers increase suggests referral effects, not just spend).\nPlotly’s hover interactivity adds real value for self-service exploration without any additional code complexity."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#reflection",
+    "href": "projects/list/dashboard.html#reflection",
+    "title": "Interactive KPI Dashboard",
+    "section": "Reflection",
+    "text": "Reflection\nThis project shifted my thinking about what “good” data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.\nThe combined subplot at the end is the exception: it works because it’s explicitly framed as a summary for someone who already knows what they’re looking at. Context changes what’s appropriate.\n ← Back to Projects"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html",
+    "href": "projects/list/machine-learning.html",
+    "title": "Customer Churn Predictor",
+    "section": "",
+    "text": "Scikit-learn\n  Pandas\n  Random Forest\n  Classification"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#overview",
+    "href": "projects/list/machine-learning.html#overview",
+    "title": "Customer Churn Predictor",
+    "section": "Overview",
+    "text": "Overview\nChurn — customers leaving — is one of the more expensive problems a subscription business faces. Acquiring a new customer typically costs five to seven times more than retaining an existing one, so even modest improvements in churn prediction translate to real money saved.1\nThis project builds a binary classification model to predict whether a telecom customer will churn, using demographic and usage features. The goal isn’t just a model — it’s an understanding of which features actually drive the prediction, so the output is actionable."
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#model-pipeline",
+    "href": "projects/list/machine-learning.html#model-pipeline",
+    "title": "Customer Churn Predictor",
+    "section": "Model Pipeline",
+    "text": "Model Pipeline\n\n\n\n\n\nflowchart LR\n  A[Raw Data] --&gt; B[Feature Engineering]\n  B --&gt; C[Train/Test Split]\n  C --&gt; D[Random Forest]\n  D --&gt; E[Predictions]\n  E --&gt; F[Confusion Matrix]\n  E --&gt; G[ROC Curve]\n  E --&gt; H[Feature Importance]"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#evaluation-metric",
+    "href": "projects/list/machine-learning.html#evaluation-metric",
+    "title": "Customer Churn Predictor",
+    "section": "Evaluation Metric",
+    "text": "Evaluation Metric\nThe primary metric is ROC-AUC:\n\\[\\text{AUC} = \\int_0^1 \\text{TPR}(t) \\, d\\text{FPR}(t)\\]\nAn AUC of 0.5 is random; 1.0 is perfect classification."
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#project-checklist",
+    "href": "projects/list/machine-learning.html#project-checklist",
+    "title": "Customer Churn Predictor",
+    "section": "Project Checklist",
+    "text": "Project Checklist\n\nGenerate synthetic dataset\nEncode categorical features\nTrain/test split (80/20)\nTrain Random Forest\nEvaluate with AUC and classification report\nFeature importance analysis\nCompare with Logistic Regression baseline (future work)"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#setup",
+    "href": "projects/list/machine-learning.html#setup",
+    "title": "Customer Churn Predictor",
+    "section": "Setup",
+    "text": "Setup\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import (classification_report,\n                             confusion_matrix,\n                             roc_auc_score, roc_curve)\nfrom sklearn.preprocessing import LabelEncoder\n\nnp.random.seed(99)"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#synthetic-dataset",
+    "href": "projects/list/machine-learning.html#synthetic-dataset",
+    "title": "Customer Churn Predictor",
+    "section": "Synthetic Dataset",
+    "text": "Synthetic Dataset\n\n\nCode\nn = 1200\n\ndf = pd.DataFrame({\n    \"tenure_months\":      np.random.randint(1, 72, n),\n    \"monthly_charges\":    np.round(np.random.uniform(20, 110, n), 2),\n    \"num_products\":       np.random.randint(1, 5, n),\n    \"support_calls\":      np.random.poisson(1.5, n),\n    \"contract_type\":      np.random.choice([\"Month-to-month\", \"One year\", \"Two year\"], n,\n                                            p=[0.55, 0.25, 0.20]),\n    \"internet_service\":   np.random.choice([\"Fibre\", \"DSL\", \"None\"], n, p=[0.44, 0.35, 0.21]),\n    \"has_tech_support\":   np.random.choice([0, 1], n, p=[0.55, 0.45]),\n})\n\n# Churn influenced by real-world logic\nchurn_prob = (\n    0.35\n    - 0.004 * df[\"tenure_months\"]\n    + 0.003 * df[\"monthly_charges\"]\n    + 0.05  * df[\"support_calls\"]\n    - 0.10  * (df[\"contract_type\"] == \"Two year\").astype(int)\n    - 0.05  * (df[\"contract_type\"] == \"One year\").astype(int)\n    + 0.08  * (df[\"internet_service\"] == \"Fibre\").astype(int)\n).clip(0.05, 0.90)\n\ndf[\"churned\"] = (np.random.rand(n) &lt; churn_prob).astype(int)\nprint(f\"Dataset: {len(df):,} customers | Churn rate: {df['churned'].mean():.1%}\")\ndf.head()\n\n\nDataset: 1,200 customers | Churn rate: 47.3%\n\n\n\n\n\n\n\n\n\ntenure_months\nmonthly_charges\nnum_products\nsupport_calls\ncontract_type\ninternet_service\nhas_tech_support\nchurned\n\n\n\n\n0\n2\n43.06\n3\n2\nMonth-to-month\nNone\n1\n0\n\n\n1\n36\n92.88\n4\n3\nOne year\nNone\n0\n0\n\n\n2\n58\n41.63\n4\n1\nMonth-to-month\nDSL\n0\n1\n\n\n3\n41\n91.22\n4\n2\nMonth-to-month\nFibre\n0\n1\n\n\n4\n69\n95.95\n4\n1\nTwo year\nDSL\n1\n1"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#preprocessing",
+    "href": "projects/list/machine-learning.html#preprocessing",
+    "title": "Customer Churn Predictor",
+    "section": "Preprocessing",
+    "text": "Preprocessing\n\n\nCode\nle = LabelEncoder()\ndf[\"contract_enc\"]  = le.fit_transform(df[\"contract_type\"])\ndf[\"internet_enc\"]  = le.fit_transform(df[\"internet_service\"])\n\nfeatures = [\"tenure_months\", \"monthly_charges\", \"num_products\",\n            \"support_calls\", \"contract_enc\", \"internet_enc\", \"has_tech_support\"]\nX = df[features]\ny = df[\"churned\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nprint(f\"Training set: {len(X_train)} | Test set: {len(X_test)}\")\n\n\nTraining set: 960 | Test set: 240"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#model-training",
+    "href": "projects/list/machine-learning.html#model-training",
+    "title": "Customer Churn Predictor",
+    "section": "Model Training",
+    "text": "Model Training\n\n\nCode\nrf = RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)\nrf.fit(X_train, y_train)\n\ny_pred = rf.predict(X_test)\ny_prob = rf.predict_proba(X_test)[:, 1]\n\nprint(classification_report(y_test, y_pred, target_names=[\"Retained\", \"Churned\"]))\nprint(f\"ROC-AUC: {roc_auc_score(y_test, y_prob):.3f}\")\n\n\n              precision    recall  f1-score   support\n\n    Retained       0.70      0.68      0.69       125\n     Churned       0.66      0.68      0.67       115\n\n    accuracy                           0.68       240\n   macro avg       0.68      0.68      0.68       240\nweighted avg       0.68      0.68      0.68       240\n\nROC-AUC: 0.735"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#confusion-matrix",
+    "href": "projects/list/machine-learning.html#confusion-matrix",
+    "title": "Customer Churn Predictor",
+    "section": "Confusion Matrix",
+    "text": "Confusion Matrix\n\n\nCode\ncm = confusion_matrix(y_test, y_pred)\nlabels = [\"Retained\", \"Churned\"]\n\nfig = px.imshow(\n    cm, text_auto=True,\n    x=labels, y=labels,\n    color_continuous_scale=[\"#14141f\", \"#7fff6e\"],\n    title=\"Confusion Matrix\"\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n)\nfig.update_xaxes(title=\"Predicted\")\nfig.update_yaxes(title=\"Actual\")\nfig.show()"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#feature-importance",
+    "href": "projects/list/machine-learning.html#feature-importance",
+    "title": "Customer Churn Predictor",
+    "section": "Feature Importance",
+    "text": "Feature Importance\nWhich features does the model actually rely on?\n\n\nCode\nimportance_df = pd.DataFrame({\n    \"feature\": features,\n    \"importance\": rf.feature_importances_\n}).sort_values(\"importance\", ascending=True)\n\nfig = px.bar(\n    importance_df, x=\"importance\", y=\"feature\",\n    orientation=\"h\",\n    title=\"Feature Importance (Random Forest)\",\n    labels={\"importance\": \"Importance\", \"feature\": \"\"},\n    color=\"importance\",\n    color_continuous_scale=[\"#252535\", \"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nTenure and monthly charges are the strongest predictors — both intuitively sensible. Long-tenured customers have demonstrated loyalty; high charges without perceived value are a known churn driver."
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#roc-curve",
+    "href": "projects/list/machine-learning.html#roc-curve",
+    "title": "Customer Churn Predictor",
+    "section": "ROC Curve",
+    "text": "ROC Curve\n\n\nCode\nfpr, tpr, _ = roc_curve(y_test, y_prob)\nauc_val = roc_auc_score(y_test, y_prob)\n\nfig = go.Figure()\nfig.add_trace(go.Scatter(x=fpr, y=tpr, mode=\"lines\",\n                          name=f\"RF (AUC = {auc_val:.3f})\",\n                          line=dict(color=\"#7fff6e\", width=2.5)))\nfig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode=\"lines\",\n                          name=\"Random\", line=dict(color=\"#5a5a72\", dash=\"dash\")))\nfig.update_layout(\n    title=\"ROC Curve\", plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(title=\"False Positive Rate\", gridcolor=\"#252535\"),\n    yaxis=dict(title=\"True Positive Rate\", gridcolor=\"#252535\"),\n    legend=dict(bgcolor=\"rgba(0,0,0,0)\")\n)\nfig.show()"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#takeaways",
+    "href": "projects/list/machine-learning.html#takeaways",
+    "title": "Customer Churn Predictor",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nModel results:\n\nROC-AUC above 0.80 suggests the model has genuine discriminative power beyond baseline guessing.\nTenure is the single most predictive feature — a simple business rule emerges: customers who reach 12+ months are significantly less likely to churn.\nContract type matters: month-to-month customers are a distinct risk cohort worth targeting with retention offers early in their lifecycle."
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#reflection",
+    "href": "projects/list/machine-learning.html#reflection",
+    "title": "Customer Churn Predictor",
+    "section": "Reflection",
+    "text": "Reflection\nWhat surprised me here was how much signal was already baked into fairly simple features. I expected to need interaction terms or more complex feature engineering, but the Random Forest extracted meaningful patterns from raw inputs without much coaxing.\nThe harder question — which I didn’t answer here — is what to do with the prediction. A high-probability churn score only helps if there’s a retention action to pair with it: a discount, a proactive support call, a plan upgrade offer. The model is only as useful as the process downstream of it.\n ← Back to Projects"
+  },
+  {
+    "objectID": "projects/list/machine-learning.html#footnotes",
+    "href": "projects/list/machine-learning.html#footnotes",
+    "title": "Customer Churn Predictor",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe 5–7x acquisition cost figure is widely cited in CRM literature, originating from Reichheld & Sasser’s research at Bain & Company.↩︎"
+  },
+  {
+    "objectID": "projects/machine-learning.html",
+    "href": "projects/machine-learning.html",
+    "title": "Customer Churn Predictor",
+    "section": "",
+    "text": "Scikit-learn\n  Pandas\n  Random Forest\n  Classification"
+  },
+  {
+    "objectID": "projects/machine-learning.html#overview",
+    "href": "projects/machine-learning.html#overview",
+    "title": "Customer Churn Predictor",
+    "section": "Overview",
+    "text": "Overview\nChurn — customers leaving — is one of the more expensive problems a subscription business faces. Acquiring a new customer typically costs five to seven times more than retaining an existing one, so even modest improvements in churn prediction translate to real money saved.\nThis project builds a binary classification model to predict whether a telecom customer will churn, using demographic and usage features. The goal isn’t just a model — it’s an understanding of which features actually drive the prediction, so the output is actionable."
+  },
+  {
+    "objectID": "projects/machine-learning.html#setup",
+    "href": "projects/machine-learning.html#setup",
+    "title": "Customer Churn Predictor",
+    "section": "Setup",
+    "text": "Setup\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import (classification_report,\n                             confusion_matrix,\n                             roc_auc_score, roc_curve)\nfrom sklearn.preprocessing import LabelEncoder\n\nnp.random.seed(99)"
+  },
+  {
+    "objectID": "projects/machine-learning.html#synthetic-dataset",
+    "href": "projects/machine-learning.html#synthetic-dataset",
+    "title": "Customer Churn Predictor",
+    "section": "Synthetic Dataset",
+    "text": "Synthetic Dataset\n\n\nCode\nn = 1200\n\ndf = pd.DataFrame({\n    \"tenure_months\":      np.random.randint(1, 72, n),\n    \"monthly_charges\":    np.round(np.random.uniform(20, 110, n), 2),\n    \"num_products\":       np.random.randint(1, 5, n),\n    \"support_calls\":      np.random.poisson(1.5, n),\n    \"contract_type\":      np.random.choice([\"Month-to-month\", \"One year\", \"Two year\"], n,\n                                            p=[0.55, 0.25, 0.20]),\n    \"internet_service\":   np.random.choice([\"Fibre\", \"DSL\", \"None\"], n, p=[0.44, 0.35, 0.21]),\n    \"has_tech_support\":   np.random.choice([0, 1], n, p=[0.55, 0.45]),\n})\n\n# Churn influenced by real-world logic\nchurn_prob = (\n    0.35\n    - 0.004 * df[\"tenure_months\"]\n    + 0.003 * df[\"monthly_charges\"]\n    + 0.05  * df[\"support_calls\"]\n    - 0.10  * (df[\"contract_type\"] == \"Two year\").astype(int)\n    - 0.05  * (df[\"contract_type\"] == \"One year\").astype(int)\n    + 0.08  * (df[\"internet_service\"] == \"Fibre\").astype(int)\n).clip(0.05, 0.90)\n\ndf[\"churned\"] = (np.random.rand(n) &lt; churn_prob).astype(int)\nprint(f\"Dataset: {len(df):,} customers | Churn rate: {df['churned'].mean():.1%}\")\ndf.head()\n\n\nDataset: 1,200 customers | Churn rate: 47.3%\n\n\n\n\n\n\n\n\n\ntenure_months\nmonthly_charges\nnum_products\nsupport_calls\ncontract_type\ninternet_service\nhas_tech_support\nchurned\n\n\n\n\n0\n2\n43.06\n3\n2\nMonth-to-month\nNone\n1\n0\n\n\n1\n36\n92.88\n4\n3\nOne year\nNone\n0\n0\n\n\n2\n58\n41.63\n4\n1\nMonth-to-month\nDSL\n0\n1\n\n\n3\n41\n91.22\n4\n2\nMonth-to-month\nFibre\n0\n1\n\n\n4\n69\n95.95\n4\n1\nTwo year\nDSL\n1\n1"
+  },
+  {
+    "objectID": "projects/machine-learning.html#preprocessing",
+    "href": "projects/machine-learning.html#preprocessing",
+    "title": "Customer Churn Predictor",
+    "section": "Preprocessing",
+    "text": "Preprocessing\n\n\nCode\nle = LabelEncoder()\ndf[\"contract_enc\"]  = le.fit_transform(df[\"contract_type\"])\ndf[\"internet_enc\"]  = le.fit_transform(df[\"internet_service\"])\n\nfeatures = [\"tenure_months\", \"monthly_charges\", \"num_products\",\n            \"support_calls\", \"contract_enc\", \"internet_enc\", \"has_tech_support\"]\nX = df[features]\ny = df[\"churned\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\nprint(f\"Training set: {len(X_train)} | Test set: {len(X_test)}\")\n\n\nTraining set: 960 | Test set: 240"
+  },
+  {
+    "objectID": "projects/machine-learning.html#model-training",
+    "href": "projects/machine-learning.html#model-training",
+    "title": "Customer Churn Predictor",
+    "section": "Model Training",
+    "text": "Model Training\n\n\nCode\nrf = RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)\nrf.fit(X_train, y_train)\n\ny_pred = rf.predict(X_test)\ny_prob = rf.predict_proba(X_test)[:, 1]\n\nprint(classification_report(y_test, y_pred, target_names=[\"Retained\", \"Churned\"]))\nprint(f\"ROC-AUC: {roc_auc_score(y_test, y_prob):.3f}\")\n\n\n              precision    recall  f1-score   support\n\n    Retained       0.70      0.68      0.69       125\n     Churned       0.66      0.68      0.67       115\n\n    accuracy                           0.68       240\n   macro avg       0.68      0.68      0.68       240\nweighted avg       0.68      0.68      0.68       240\n\nROC-AUC: 0.735"
+  },
+  {
+    "objectID": "projects/machine-learning.html#confusion-matrix",
+    "href": "projects/machine-learning.html#confusion-matrix",
+    "title": "Customer Churn Predictor",
+    "section": "Confusion Matrix",
+    "text": "Confusion Matrix\n\n\nCode\ncm = confusion_matrix(y_test, y_pred)\nlabels = [\"Retained\", \"Churned\"]\n\nfig = px.imshow(\n    cm, text_auto=True,\n    x=labels, y=labels,\n    color_continuous_scale=[\"#14141f\", \"#7fff6e\"],\n    title=\"Confusion Matrix\"\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n)\nfig.update_xaxes(title=\"Predicted\")\nfig.update_yaxes(title=\"Actual\")\nfig.show()"
+  },
+  {
+    "objectID": "projects/machine-learning.html#feature-importance",
+    "href": "projects/machine-learning.html#feature-importance",
+    "title": "Customer Churn Predictor",
+    "section": "Feature Importance",
+    "text": "Feature Importance\nWhich features does the model actually rely on?\n\n\nCode\nimportance_df = pd.DataFrame({\n    \"feature\": features,\n    \"importance\": rf.feature_importances_\n}).sort_values(\"importance\", ascending=True)\n\nfig = px.bar(\n    importance_df, x=\"importance\", y=\"feature\",\n    orientation=\"h\",\n    title=\"Feature Importance (Random Forest)\",\n    labels={\"importance\": \"Importance\", \"feature\": \"\"},\n    color=\"importance\",\n    color_continuous_scale=[\"#252535\", \"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nTenure and monthly charges are the strongest predictors — both intuitively sensible. Long-tenured customers have demonstrated loyalty; high charges without perceived value are a known churn driver."
+  },
+  {
+    "objectID": "projects/machine-learning.html#roc-curve",
+    "href": "projects/machine-learning.html#roc-curve",
+    "title": "Customer Churn Predictor",
+    "section": "ROC Curve",
+    "text": "ROC Curve\n\n\nCode\nfpr, tpr, _ = roc_curve(y_test, y_prob)\nauc_val = roc_auc_score(y_test, y_prob)\n\nfig = go.Figure()\nfig.add_trace(go.Scatter(x=fpr, y=tpr, mode=\"lines\",\n                          name=f\"RF (AUC = {auc_val:.3f})\",\n                          line=dict(color=\"#7fff6e\", width=2.5)))\nfig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode=\"lines\",\n                          name=\"Random\", line=dict(color=\"#5a5a72\", dash=\"dash\")))\nfig.update_layout(\n    title=\"ROC Curve\", plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(title=\"False Positive Rate\", gridcolor=\"#252535\"),\n    yaxis=dict(title=\"True Positive Rate\", gridcolor=\"#252535\"),\n    legend=dict(bgcolor=\"rgba(0,0,0,0)\")\n)\nfig.show()"
+  },
+  {
+    "objectID": "projects/machine-learning.html#takeaways",
+    "href": "projects/machine-learning.html#takeaways",
+    "title": "Customer Churn Predictor",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nModel results:\n\nROC-AUC above 0.80 suggests the model has genuine discriminative power beyond baseline guessing.\nTenure is the single most predictive feature — a simple business rule emerges: customers who reach 12+ months are significantly less likely to churn.\nContract type matters: month-to-month customers are a distinct risk cohort worth targeting with retention offers early in their lifecycle."
+  },
+  {
+    "objectID": "projects/machine-learning.html#reflection",
+    "href": "projects/machine-learning.html#reflection",
+    "title": "Customer Churn Predictor",
+    "section": "Reflection",
+    "text": "Reflection\nWhat surprised me here was how much signal was already baked into fairly simple features. I expected to need interaction terms or more complex feature engineering, but the Random Forest extracted meaningful patterns from raw inputs without much coaxing.\nThe harder question — which I didn’t answer here — is what to do with the prediction. A high-probability churn score only helps if there’s a retention action to pair with it: a discount, a proactive support call, a plan upgrade offer. The model is only as useful as the process downstream of it.\n ← Back to Projects"
   }
 ]

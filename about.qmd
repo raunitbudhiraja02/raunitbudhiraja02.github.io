@@ -16,7 +16,7 @@ toc: false
 <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; padding-bottom: 4rem;">
   <div>
     <img
-      src="images/profile.jpg"
+      src="images/profile.png"
       alt="Raunit Budhiraja"
       style="width:100%; border-radius:16px; border:1px solid #252535; filter: grayscale(20%);"
     />
