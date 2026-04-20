@@ -112,158 +112,74 @@
     "text": "Reflection\nWorking in a group on a data project surfaced something that individual projects don’t: the hardest part isn’t the analysis, it’s agreeing on what question you’re answering. We spent more time than expected aligning on which KPIs to prioritise before we could build anything useful.\nThe other thing I took from this: Power BI is genuinely powerful for stakeholder-facing reporting, but it abstracts away the data manipulation in a way that can hide assumptions. Knowing the underlying data — really knowing it, having cleaned it yourself — is what lets you catch when a DAX measure is giving plausible-looking but wrong numbers.\n ← Back to Projects"
   },
   {
-    "objectID": "projects/list/data-analysis.html",
-    "href": "projects/list/data-analysis.html",
-    "title": "Exploratory Sales Analysis",
+    "objectID": "projects/list/dashboard.html",
+    "href": "projects/list/dashboard.html",
+    "title": "Interactive KPI Dashboard",
     "section": "",
-    "text": "Every retail business generates transaction logs — thousands of rows tracking what sold, when, and where. The problem is rarely a lack of data. It’s knowing what to look at first.1\nThis project takes a synthetic retail dataset and works through a structured EDA process: cleaning, understanding the shape, then asking progressively sharper questions until a few genuinely useful patterns emerge."
+    "text": "Plotly\n  Python\n  Dashboard\n  BI"
   },
   {
-    "objectID": "projects/list/data-analysis.html#overview",
-    "href": "projects/list/data-analysis.html#overview",
-    "title": "Exploratory Sales Analysis",
-    "section": "",
-    "text": "Every retail business generates transaction logs — thousands of rows tracking what sold, when, and where. The problem is rarely a lack of data. It’s knowing what to look at first.1\nThis project takes a synthetic retail dataset and works through a structured EDA process: cleaning, understanding the shape, then asking progressively sharper questions until a few genuinely useful patterns emerge."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#eda-workflow",
-    "href": "projects/list/data-analysis.html#eda-workflow",
-    "title": "Exploratory Sales Analysis",
-    "section": "EDA Workflow",
-    "text": "EDA Workflow\nThe process followed here is a standard analytical pipeline:\n\n\n\n\n\nflowchart LR\n  A[Load Data] --&gt; B[Quality Check]\n  B --&gt; C[Univariate Analysis]\n  C --&gt; D[Bivariate Analysis]\n  D --&gt; E[Time Series Trends]\n  E --&gt; F[Insights & Conclusions]"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#dataset",
-    "href": "projects/list/data-analysis.html#dataset",
-    "title": "Exploratory Sales Analysis",
-    "section": "Dataset",
-    "text": "Dataset\nThe dataset is a synthetic retail sales log covering 12 months across four product categories.\n\n\n\nColumn\nType\nDescription\n\n\n\n\ndate\ndatetime\nTransaction date\n\n\ncategory\nstring\nProduct category\n\n\nregion\nstring\nIrish region\n\n\nunits_sold\nint\nUnits per transaction\n\n\nrevenue\nfloat\nRevenue in euros (€)"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#setup-data-loading",
-    "href": "projects/list/data-analysis.html#setup-data-loading",
-    "title": "Exploratory Sales Analysis",
-    "section": "Setup & Data Loading",
-    "text": "Setup & Data Loading\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nimport numpy as np\n\nnp.random.seed(42)\n\ndates = pd.date_range(\"2024-01-01\", \"2024-12-31\", freq=\"D\")\ncategories = [\"Electronics\", \"Apparel\", \"Home & Garden\", \"Sports\"]\nregions = [\"Dublin\", \"Cork\", \"Galway\", \"Limerick\"]\n\nrows = []\nfor date in dates:\n    for _ in range(np.random.randint(3, 8)):\n        cat = np.random.choice(categories)\n        base = {\"Electronics\": 180, \"Apparel\": 55, \"Home & Garden\": 90, \"Sports\": 70}[cat]\n        seasonal = 1 + 0.3 * np.sin((date.month - 1) * np.pi / 6)\n        rows.append({\n            \"date\": date,\n            \"category\": cat,\n            \"region\": np.random.choice(regions),\n            \"units_sold\": int(np.random.poisson(seasonal * 5)),\n            \"revenue\": round(base * seasonal * np.random.uniform(0.85, 1.15) * np.random.poisson(seasonal * 5), 2)\n        })\n\ndf = pd.DataFrame(rows)\ndf[\"month\"] = df[\"date\"].dt.to_period(\"M\").astype(str)\ndf[\"month_num\"] = df[\"date\"].dt.month\n\nprint(f\"Rows: {len(df):,} | Columns: {df.shape[1]}\")\ndf.head()\n\n\nRows: 1,883 | Columns: 7\n\n\n\n\n\n\n\n\n\ndate\ncategory\nregion\nunits_sold\nrevenue\nmonth\nmonth_num\n\n\n\n\n0\n2024-01-01\nElectronics\nGalway\n4\n998.87\n2024-01\n1\n\n\n1\n2024-01-01\nSports\nLimerick\n4\n289.40\n2024-01\n1\n\n\n2\n2024-01-01\nHome & Garden\nLimerick\n4\n469.54\n2024-01\n1\n\n\n3\n2024-01-01\nHome & Garden\nLimerick\n3\n755.10\n2024-01\n1\n\n\n4\n2024-01-01\nSports\nGalway\n2\n331.66\n2024-01\n1"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#data-quality-check",
-    "href": "projects/list/data-analysis.html#data-quality-check",
-    "title": "Exploratory Sales Analysis",
-    "section": "Data Quality Check",
-    "text": "Data Quality Check\n\n\nCode\nprint(\"Null values:\\n\", df.isnull().sum())\nprint(f\"\\nDate range: {df['date'].min().date()} → {df['date'].max().date()}\")\nprint(f\"Categories: {df['category'].unique()}\")\n\n\nNull values:\n date          0\ncategory      0\nregion        0\nunits_sold    0\nrevenue       0\nmonth         0\nmonth_num     0\ndtype: int64\n\nDate range: 2024-01-01 → 2024-12-31\nCategories: [np.str_('Electronics') np.str_('Sports') np.str_('Home & Garden')\n np.str_('Apparel')]\n\n\nNo nulls, correct types, full year of coverage."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#revenue-formula",
-    "href": "projects/list/data-analysis.html#revenue-formula",
-    "title": "Exploratory Sales Analysis",
-    "section": "Revenue Formula",
-    "text": "Revenue Formula\nThe synthetic revenue for each transaction is modelled as:\n\\[R = B \\cdot S \\cdot \\epsilon \\cdot U\\]\nWhere:\n\n\\(B\\) = base price per category\n\n\\(S\\) = seasonal multiplier \\(\\left(1 + 0.3\\sin\\left(\\frac{(m-1)\\pi}{6}\\right)\\right)\\)\n\n\\(\\epsilon\\) = random noise \\(\\sim \\text{Uniform}(0.85, 1.15)\\)\n\n\\(U\\) = units sold \\(\\sim \\text{Poisson}(5S)\\)"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#monthly-revenue-trend",
-    "href": "projects/list/data-analysis.html#monthly-revenue-trend",
-    "title": "Exploratory Sales Analysis",
-    "section": "Monthly Revenue Trend",
-    "text": "Monthly Revenue Trend\n\n\nCode\nmonthly = df.groupby(\"month\")[\"revenue\"].sum().reset_index()\nmonthly.columns = [\"month\", \"total_revenue\"]\n\nfig = px.line(\n    monthly, x=\"month\", y=\"total_revenue\",\n    title=\"Monthly Revenue — Full Year\",\n    labels={\"month\": \"\", \"total_revenue\": \"Revenue (€)\"},\n    markers=True,\n    color_discrete_sequence=[\"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.update_traces(line_width=2.5)\nfig.show()\n\n\n                            \n                                            \nMonthly revenue across the full year, showing a clear seasonal peak in Q4."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#revenue-by-category",
-    "href": "projects/list/data-analysis.html#revenue-by-category",
-    "title": "Exploratory Sales Analysis",
-    "section": "Revenue by Category",
-    "text": "Revenue by Category\n\n\nCode\ncat_rev = df.groupby(\"category\")[\"revenue\"].sum().reset_index().sort_values(\"revenue\", ascending=True)\n\nfig = px.bar(\n    cat_rev, y=\"category\", x=\"revenue\",\n    orientation=\"h\",\n    title=\"Total Revenue by Category\",\n    labels={\"category\": \"\", \"revenue\": \"Revenue (€)\"},\n    color=\"revenue\",\n    color_continuous_scale=[\"#252535\", \"#7fff6e\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \nTotal annual revenue by product category. Electronics leads by a significant margin."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#regional-breakdown",
-    "href": "projects/list/data-analysis.html#regional-breakdown",
-    "title": "Exploratory Sales Analysis",
-    "section": "Regional Breakdown",
-    "text": "Regional Breakdown\n\n\nCode\nregion_cat = df.groupby([\"region\", \"category\"])[\"revenue\"].sum().reset_index()\n\nfig = px.bar(\n    region_cat, x=\"region\", y=\"revenue\", color=\"category\",\n    title=\"Revenue by Region and Category\",\n    labels={\"region\": \"\", \"revenue\": \"Revenue (€)\", \"category\": \"Category\"},\n    barmode=\"group\",\n    color_discrete_sequence=[\"#7fff6e\", \"#68d9ff\", \"#a78bfa\", \"#ffd166\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    yaxis=dict(gridcolor=\"#252535\"),\n    legend=dict(bgcolor=\"rgba(0,0,0,0)\")\n)\nfig.show()\n\n\n                            \n                                            \nRevenue split by region and category. Distribution is broadly even across Irish regions."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#project-checklist",
-    "href": "projects/list/data-analysis.html#project-checklist",
-    "title": "Exploratory Sales Analysis",
-    "section": "Project Checklist",
-    "text": "Project Checklist\nProgress through this analysis:\n\nLoad and inspect the dataset\nCheck for nulls and data type issues\nAnalyse monthly revenue trend\nBreak down revenue by category\nExplore regional distribution\nBuild a predictive sales forecast (future work)"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#key-takeaways",
-    "href": "projects/list/data-analysis.html#key-takeaways",
-    "title": "Exploratory Sales Analysis",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\n\n\n\n\nNoteWhat this analysis found\n\n\n\n\nRevenue follows a clear seasonal arc peaking in Q4 — promotional spend should be front-loaded into Q3 to capture the ramp-up.\nElectronics generates disproportionate revenue relative to transaction count — protecting margin here matters more than volume discounts.\nRegional revenue is broadly distributed, so a Dublin-only marketing focus would miss a substantial share of the market.\n\n\n\n\n\n\n\n\n\nTipNext steps\n\n\n\nA natural follow-up is forecasting: does the Q4 peak come from higher basket sizes, or more transactions? That’s the next query to write."
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#reflection",
-    "href": "projects/list/data-analysis.html#reflection",
-    "title": "Exploratory Sales Analysis",
-    "section": "Reflection",
-    "text": "Reflection\nThis project reinforced something I keep running into — the most useful output of an EDA isn’t the visualisations themselves, it’s the shortlist of questions they raise. Clean data still takes time, even when it’s synthetic. There were real decisions to make about aggregation level, date formatting, and how to handle multi-category breakdowns without obscuring the signal.\n ← Back to Projects"
-  },
-  {
-    "objectID": "projects/list/data-analysis.html#footnotes",
-    "href": "projects/list/data-analysis.html#footnotes",
-    "title": "Exploratory Sales Analysis",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is sometimes called the “curse of dimensionality” in data science — more data doesn’t automatically mean more insight.↩︎"
-  },
-  {
-    "objectID": "projects/list/business-strategy.html",
-    "href": "projects/list/business-strategy.html",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "",
-    "text": "Strategy\n  Research\n  Frameworks\n  B2B"
-  },
-  {
-    "objectID": "projects/list/business-strategy.html#overview",
-    "href": "projects/list/business-strategy.html#overview",
-    "title": "Market Entry Analysis — SaaS Product",
+    "objectID": "projects/list/dashboard.html#overview",
+    "href": "projects/list/dashboard.html#overview",
+    "title": "Interactive KPI Dashboard",
     "section": "Overview",
-    "text": "Overview\nThis project addresses a question that comes up constantly in business school but rarely gets a satisfying quantitative treatment: should this company enter this market?\nThe product in question is a hypothetical B2B project management SaaS targeting mid-size professional services firms in Ireland and the UK. The analysis combines a structured qualitative framework (Porter’s Five Forces) with publicly available market sizing data to arrive at a view on attractiveness and strategic fit."
+    "text": "Overview\nA dashboard’s job is simple in theory: put the right number in front of the right person at the right time. In practice it’s trickier — you have to decide what actually matters, strip out everything that doesn’t, and then make it readable at a glance.\nThis project builds a multi-panel KPI dashboard for a fictional subscription business, tracking three core metrics over a 12-month period: monthly recurring revenue, customer acquisition cost, and churn rate. All charts are built with Plotly Express and styled consistently."
   },
   {
-    "objectID": "projects/list/business-strategy.html#market-context",
-    "href": "projects/list/business-strategy.html#market-context",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Market Context",
-    "text": "Market Context\nThe B2B SaaS market for project management tools has grown substantially since 2020, accelerated by hybrid work adoption. Key players in the segment include Asana, Monday.com, ClickUp, and Notion — all US-headquartered but with strong European presence.\nThe gap this hypothetical product targets: tools designed explicitly for professional services billing workflows (law firms, consultancies, accountancy practices), rather than general task management.\n\n\n\nMetric\nValue\n\n\n\n\nTotal Addressable Market (TAM) — EU B2B PM SaaS\n€2.8B (2024 est.)\n\n\nServiceable Addressable Market (SAM) — Professional Services\n€420M\n\n\nTarget Segment — Irish & UK SMEs\n€38M\n\n\nExpected initial market share target\n1–2%"
+    "objectID": "projects/list/dashboard.html#setup-data",
+    "href": "projects/list/dashboard.html#setup-data",
+    "title": "Interactive KPI Dashboard",
+    "section": "Setup & Data",
+    "text": "Setup & Data\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nnp.random.seed(7)\n\nmonths = pd.period_range(\"2024-01\", periods=12, freq=\"M\")\nmonth_labels = [str(m) for m in months]\n\nmrr = np.cumsum(np.random.normal(3000, 600, 12)) + 40000\ncac = 120 + np.random.normal(0, 10, 12) + np.linspace(0, -25, 12)\nchurn = np.clip(0.065 + np.random.normal(0, 0.008, 12) + np.linspace(0, -0.02, 12), 0.02, 0.12)\nnew_customers = (np.random.poisson(35, 12) + np.linspace(0, 20, 12)).astype(int)\n\ndf = pd.DataFrame({\n    \"month\": month_labels,\n    \"mrr\": mrr.round(0),\n    \"cac\": cac.round(2),\n    \"churn_rate\": (churn * 100).round(2),\n    \"new_customers\": new_customers\n})\ndf.head()\n\n\n\n\n\n\n\n\n\nmonth\nmrr\ncac\nchurn_rate\nnew_customers\n\n\n\n\n0\n2024-01\n44014.0\n125.05\n6.46\n38\n\n\n1\n2024-02\n46735.0\n115.11\n5.16\n35\n\n\n2\n2024-03\n49754.0\n113.03\n5.81\n36\n\n\n3\n2024-04\n52999.0\n98.65\n4.12\n34\n\n\n4\n2024-05\n55526.0\n116.45\n6.61\n41"
   },
   {
-    "objectID": "projects/list/business-strategy.html#porters-five-forces-analysis",
-    "href": "projects/list/business-strategy.html#porters-five-forces-analysis",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Porter’s Five Forces Analysis",
-    "text": "Porter’s Five Forces Analysis\n\n1. Threat of New Entrants — Moderate\nCloud infrastructure has lowered the cost of building SaaS dramatically. A capable team can launch an MVP in months. However, the professional services segment has specific compliance requirements (GDPR, billing standards, integration with practice management software) that raise the effective barrier above the general SaaS average.\nImplication: Entry is feasible but requires domain expertise, not just engineering capability.\n\n\n\n2. Bargaining Power of Suppliers — Low\nPrimary inputs are cloud infrastructure (AWS, GCP, Azure) and third-party integrations. No single supplier has meaningful leverage. Switching costs between cloud providers are non-trivial but not prohibitive.\nImplication: No structural constraint on margins from the supply side.\n\n\n\n3. Bargaining Power of Buyers — High\nProfessional services firms have many alternatives. Procurement decisions are often made by partners or finance directors who are price-sensitive and slow-moving. Trial-to-paid conversion cycles can run 60–90 days. Churning customers are relatively easy to re-acquire, which also means they’re easy to lose.\nImplication: Pricing power is limited. Retention and onboarding quality matter more than acquisition.\n\n\n\n4. Threat of Substitutes — High\nThe real competition isn’t just other PM tools — it’s spreadsheets. Many professional services firms still run project tracking in Excel or Google Sheets, not because they don’t know about SaaS alternatives, but because switching has a real cost and Excel is genuinely flexible. Any new product must clear a “better than a spreadsheet” bar, not just a “better than Asana” bar.\nImplication: Product design must prioritise ease of adoption over feature completeness.\n\n\n\n5. Competitive Rivalry — High\nThe general PM SaaS space is crowded and well-funded. The niche within professional services is less competitive but is being targeted by players like TeamWork (Irish), which has a head start on brand recognition in the region.\nImplication: Differentiation must be sharp and defensible — generic “easier to use” positioning won’t cut through."
+    "objectID": "projects/list/dashboard.html#monthly-recurring-revenue",
+    "href": "projects/list/dashboard.html#monthly-recurring-revenue",
+    "title": "Interactive KPI Dashboard",
+    "section": "Monthly Recurring Revenue",
+    "text": "Monthly Recurring Revenue\n\n\nCode\nfig = px.area(\n    df, x=\"month\", y=\"mrr\",\n    title=\"Monthly Recurring Revenue (MRR)\",\n    labels={\"month\": \"\", \"mrr\": \"MRR (€)\"},\n    color_discrete_sequence=[\"#7fff6e\"]\n)\nfig.update_traces(fill='tozeroy', fillcolor='rgba(127,255,110,0.08)', line_width=2.5)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.show()\n\n\n                            \n                                            \n\n\nMRR is growing steadily — the upward slope steepens slightly in Q3, which correlates with the increase in new customer acquisition visible later."
   },
   {
-    "objectID": "projects/list/business-strategy.html#strategic-assessment",
-    "href": "projects/list/business-strategy.html#strategic-assessment",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Strategic Assessment",
-    "text": "Strategic Assessment\n\n  \n    Strengths\n    Clear niche focus reduces direct competition. Professional services billing logic is genuinely underserved. Irish base gives EU regulatory clarity.\n  \n  \n    Weaknesses\n    Small founding team, no brand recognition, long enterprise sales cycles, and the integration burden with legacy accounting software.\n  \n  \n    Opportunities\n    Post-COVID shift to hybrid work sustained. Enterprise Ireland grants available for tech SMEs. UK market post-Brexit still accessible via SaaS.\n  \n  \n    Threats\n    Large incumbents (Asana, Monday) could build professional services features. Economic slowdown reducing SME software spend."
+    "objectID": "projects/list/dashboard.html#customer-acquisition-cost",
+    "href": "projects/list/dashboard.html#customer-acquisition-cost",
+    "title": "Interactive KPI Dashboard",
+    "section": "Customer Acquisition Cost",
+    "text": "Customer Acquisition Cost\n\n\nCode\nfig = px.bar(\n    df, x=\"month\", y=\"cac\",\n    title=\"Customer Acquisition Cost (CAC)\",\n    labels={\"month\": \"\", \"cac\": \"CAC (€)\"},\n    color=\"cac\",\n    color_continuous_scale=[\"#7fff6e\", \"#252535\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"rgba(0,0,0,0)\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nCAC is trending down — a good sign that either marketing efficiency is improving or organic/referral channels are picking up share."
   },
   {
-    "objectID": "projects/list/business-strategy.html#recommendation",
-    "href": "projects/list/business-strategy.html#recommendation",
-    "title": "Market Entry Analysis — SaaS Product",
-    "section": "Recommendation",
-    "text": "Recommendation\nEnter, but narrow the initial scope.\nThe market is attractive enough to justify entry, but a broad launch would spread resource too thin against well-capitalised incumbents. The recommended approach is a vertical SaaS play — start with one professional services niche (e.g. accountancy practices), win it properly, and expand from there.\nThis mirrors the strategy that worked for TeamWork (project management for agencies), Clio (legal), and Karbon (accounting). The unit economics of vertical SaaS — higher retention, lower CAC through industry networks — are better than horizontal, even if TAM appears smaller.\nA target of 150 paying firms in year one at €250/month ARR per firm = €450,000 ARR, which is a fundable position for a seed round."
+    "objectID": "projects/list/dashboard.html#churn-rate-over-time",
+    "href": "projects/list/dashboard.html#churn-rate-over-time",
+    "title": "Interactive KPI Dashboard",
+    "section": "Churn Rate Over Time",
+    "text": "Churn Rate Over Time\n\n\nCode\nfig = px.line(\n    df, x=\"month\", y=\"churn_rate\",\n    title=\"Monthly Churn Rate (%)\",\n    labels={\"month\": \"\", \"churn_rate\": \"Churn Rate (%)\"},\n    markers=True,\n    color_discrete_sequence=[\"#68d9ff\"]\n)\nfig.add_hline(y=5, line_dash=\"dash\", line_color=\"#5a5a72\",\n              annotation_text=\"5% target\", annotation_font_color=\"#5a5a72\")\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.update_traces(line_width=2.5)\nfig.show()\n\n\n                            \n                                            \n\n\nChurn opens above the 5% target in early months but trends down toward it by year-end. The trajectory is encouraging, though it hasn’t yet broken through the threshold consistently."
   },
   {
-    "objectID": "projects/list/business-strategy.html#reflection",
-    "href": "projects/list/business-strategy.html#reflection",
-    "title": "Market Entry Analysis — SaaS Product",
+    "objectID": "projects/list/dashboard.html#combined-kpi-overview",
+    "href": "projects/list/dashboard.html#combined-kpi-overview",
+    "title": "Interactive KPI Dashboard",
+    "section": "Combined KPI Overview",
+    "text": "Combined KPI Overview\nAll four metrics on one canvas for executive summary use.\n\n\nCode\nfig = make_subplots(\n    rows=2, cols=2,\n    subplot_titles=(\"MRR (€)\", \"CAC (€)\", \"Churn Rate (%)\", \"New Customers\"),\n    vertical_spacing=0.14,\n    horizontal_spacing=0.10\n)\n\n# MRR\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"mrr\"],\n    mode=\"lines\", fill=\"tozeroy\",\n    fillcolor=\"rgba(127,255,110,0.07)\",\n    line=dict(color=\"#7fff6e\", width=2)), row=1, col=1)\n\n# CAC\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"cac\"],\n    marker_color=\"#a78bfa\"), row=1, col=2)\n\n# Churn\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"churn_rate\"],\n    mode=\"lines+markers\", line=dict(color=\"#68d9ff\", width=2)), row=2, col=1)\n\n# New customers\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"new_customers\"],\n    marker_color=\"#ffd166\"), row=2, col=2)\n\nfig.update_layout(\n    showlegend=False,\n    plot_bgcolor=\"#14141f\",\n    paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\",\n    title_text=\"Business KPI Summary — 2024\",\n    title_font_color=\"#ffffff\",\n    height=550\n)\nfor i in fig.layout.annotations:\n    i.font.color = \"#e2e2e2\"\n\nfig.update_xaxes(gridcolor=\"#252535\", tickangle=-45, tickfont_size=9)\nfig.update_yaxes(gridcolor=\"#252535\")\nfig.show()"
+  },
+  {
+    "objectID": "projects/list/dashboard.html#takeaways",
+    "href": "projects/list/dashboard.html#takeaways",
+    "title": "Interactive KPI Dashboard",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nDashboard design decisions:\n\nThree metrics is usually better than ten. Every additional tile competes for attention — the discipline is in what you leave out.\nThe combined panel is useful for spotting correlations (CAC falling as new customers increase suggests referral effects, not just spend).\nPlotly’s hover interactivity adds real value for self-service exploration without any additional code complexity."
+  },
+  {
+    "objectID": "projects/list/dashboard.html#reflection",
+    "href": "projects/list/dashboard.html#reflection",
+    "title": "Interactive KPI Dashboard",
     "section": "Reflection",
-    "text": "Reflection\nThis was the project I found most uncomfortable to work on — not because the analysis was hard, but because business strategy frameworks feel like they produce confident-looking outputs from quite uncertain inputs. The numbers in the market sizing table, for instance, come from analyst reports with wide confidence intervals that don’t get communicated in the summary figures.\nWhat I took from this is that the frameworks are useful for structuring conversations, not for producing ground truth. The Five Forces analysis is most valuable as a checklist for questions to ask, not a scoring system for ranking market attractiveness. That distinction matters a lot if you’re trying to actually make a decision versus produce a slide for a presentation.\n ← Back to Projects"
+    "text": "Reflection\nThis project shifted my thinking about what “good” data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.\nThe combined subplot at the end is the exception: it works because it’s explicitly framed as a summary for someone who already knows what they’re looking at. Context changes what’s appropriate.\n ← Back to Projects"
   },
   {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "BERT vs GPT-4 for Sentiment Analysis\n\n\n\nPython\n\nNLP\n\nBERT\n\nDeep Learning\n\nMachine Learning\n\n\n\nFine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications.\n\n\n\nApr 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory Sales Analysis\n\n\n\nPython\n\nData Analysis\n\nEDA\n\nPlotly\n\n\n\nCleaned and explored a retail sales dataset using Pandas, uncovering seasonal trends and product performance patterns through structured EDA.\n\n\n\nMar 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nPower BI Sales Dashboard — TechNova Inc.\n\n\n\nPower BI\n\nDashboard\n\nBusiness Analytics\n\nData Visualisation\n\n\n\nGroup project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024.\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Churn Predictor\n\n\n\nPython\n\nMachine Learning\n\nScikit-learn\n\nClassification\n\n\n\nBuilt a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation.\n\n\n\nFeb 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteractive KPI Dashboard\n\n\n\nPython\n\nPlotly\n\nDashboard\n\nVisualisation\n\n\n\nMulti-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period.\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarket Entry Analysis — SaaS Product\n\n\n\nBusiness Strategy\n\nFrameworks\n\nResearch\n\n\n\nData-driven market entry analysis for a B2B SaaS product combining Porter’s Five Forces with publicly available market sizing data.\n\n\n\nNov 5, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "BERT vs GPT-4 for Sentiment Analysis\n\n\n\nPython\n\nNLP\n\nBERT\n\nDeep Learning\n\nMachine Learning\n\n\n\nFine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications.\n\n\n\nApr 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nPower BI Sales Dashboard — TechNova Inc.\n\n\n\nPower BI\n\nDashboard\n\nBusiness Analytics\n\nData Visualisation\n\n\n\nGroup project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024.\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Churn Predictor\n\n\n\nPython\n\nMachine Learning\n\nScikit-learn\n\nClassification\n\n\n\nBuilt a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation.\n\n\n\nFeb 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteractive KPI Dashboard\n\n\n\nPython\n\nPlotly\n\nDashboard\n\nVisualisation\n\n\n\nMulti-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period.\n\n\n\nJan 20, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/dashboard.html",
@@ -628,69 +544,6 @@
     "title": "BERT vs GPT-4 for Sentiment Analysis",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis distinction — discriminative vs generative — is one of the most important conceptual divides in modern NLP. Discriminative models learn a boundary between classes; generative models learn the underlying data distribution.↩︎"
-  },
-  {
-    "objectID": "projects/list/dashboard.html",
-    "href": "projects/list/dashboard.html",
-    "title": "Interactive KPI Dashboard",
-    "section": "",
-    "text": "Plotly\n  Python\n  Dashboard\n  BI"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#overview",
-    "href": "projects/list/dashboard.html#overview",
-    "title": "Interactive KPI Dashboard",
-    "section": "Overview",
-    "text": "Overview\nA dashboard’s job is simple in theory: put the right number in front of the right person at the right time. In practice it’s trickier — you have to decide what actually matters, strip out everything that doesn’t, and then make it readable at a glance.\nThis project builds a multi-panel KPI dashboard for a fictional subscription business, tracking three core metrics over a 12-month period: monthly recurring revenue, customer acquisition cost, and churn rate. All charts are built with Plotly Express and styled consistently."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#setup-data",
-    "href": "projects/list/dashboard.html#setup-data",
-    "title": "Interactive KPI Dashboard",
-    "section": "Setup & Data",
-    "text": "Setup & Data\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nnp.random.seed(7)\n\nmonths = pd.period_range(\"2024-01\", periods=12, freq=\"M\")\nmonth_labels = [str(m) for m in months]\n\nmrr = np.cumsum(np.random.normal(3000, 600, 12)) + 40000\ncac = 120 + np.random.normal(0, 10, 12) + np.linspace(0, -25, 12)\nchurn = np.clip(0.065 + np.random.normal(0, 0.008, 12) + np.linspace(0, -0.02, 12), 0.02, 0.12)\nnew_customers = (np.random.poisson(35, 12) + np.linspace(0, 20, 12)).astype(int)\n\ndf = pd.DataFrame({\n    \"month\": month_labels,\n    \"mrr\": mrr.round(0),\n    \"cac\": cac.round(2),\n    \"churn_rate\": (churn * 100).round(2),\n    \"new_customers\": new_customers\n})\ndf.head()\n\n\n\n\n\n\n\n\n\nmonth\nmrr\ncac\nchurn_rate\nnew_customers\n\n\n\n\n0\n2024-01\n44014.0\n125.05\n6.46\n38\n\n\n1\n2024-02\n46735.0\n115.11\n5.16\n35\n\n\n2\n2024-03\n49754.0\n113.03\n5.81\n36\n\n\n3\n2024-04\n52999.0\n98.65\n4.12\n34\n\n\n4\n2024-05\n55526.0\n116.45\n6.61\n41"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#monthly-recurring-revenue",
-    "href": "projects/list/dashboard.html#monthly-recurring-revenue",
-    "title": "Interactive KPI Dashboard",
-    "section": "Monthly Recurring Revenue",
-    "text": "Monthly Recurring Revenue\n\n\nCode\nfig = px.area(\n    df, x=\"month\", y=\"mrr\",\n    title=\"Monthly Recurring Revenue (MRR)\",\n    labels={\"month\": \"\", \"mrr\": \"MRR (€)\"},\n    color_discrete_sequence=[\"#7fff6e\"]\n)\nfig.update_traces(fill='tozeroy', fillcolor='rgba(127,255,110,0.08)', line_width=2.5)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.show()\n\n\n                            \n                                            \n\n\nMRR is growing steadily — the upward slope steepens slightly in Q3, which correlates with the increase in new customer acquisition visible later."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#customer-acquisition-cost",
-    "href": "projects/list/dashboard.html#customer-acquisition-cost",
-    "title": "Interactive KPI Dashboard",
-    "section": "Customer Acquisition Cost",
-    "text": "Customer Acquisition Cost\n\n\nCode\nfig = px.bar(\n    df, x=\"month\", y=\"cac\",\n    title=\"Customer Acquisition Cost (CAC)\",\n    labels={\"month\": \"\", \"cac\": \"CAC (€)\"},\n    color=\"cac\",\n    color_continuous_scale=[\"#7fff6e\", \"#252535\"]\n)\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"rgba(0,0,0,0)\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n    coloraxis_showscale=False\n)\nfig.show()\n\n\n                            \n                                            \n\n\nCAC is trending down — a good sign that either marketing efficiency is improving or organic/referral channels are picking up share."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#churn-rate-over-time",
-    "href": "projects/list/dashboard.html#churn-rate-over-time",
-    "title": "Interactive KPI Dashboard",
-    "section": "Churn Rate Over Time",
-    "text": "Churn Rate Over Time\n\n\nCode\nfig = px.line(\n    df, x=\"month\", y=\"churn_rate\",\n    title=\"Monthly Churn Rate (%)\",\n    labels={\"month\": \"\", \"churn_rate\": \"Churn Rate (%)\"},\n    markers=True,\n    color_discrete_sequence=[\"#68d9ff\"]\n)\nfig.add_hline(y=5, line_dash=\"dash\", line_color=\"#5a5a72\",\n              annotation_text=\"5% target\", annotation_font_color=\"#5a5a72\")\nfig.update_layout(\n    plot_bgcolor=\"#14141f\", paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\", title_font_color=\"#ffffff\",\n    xaxis=dict(gridcolor=\"#252535\", tickangle=-30),\n    yaxis=dict(gridcolor=\"#252535\"),\n)\nfig.update_traces(line_width=2.5)\nfig.show()\n\n\n                            \n                                            \n\n\nChurn opens above the 5% target in early months but trends down toward it by year-end. The trajectory is encouraging, though it hasn’t yet broken through the threshold consistently."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#combined-kpi-overview",
-    "href": "projects/list/dashboard.html#combined-kpi-overview",
-    "title": "Interactive KPI Dashboard",
-    "section": "Combined KPI Overview",
-    "text": "Combined KPI Overview\nAll four metrics on one canvas for executive summary use.\n\n\nCode\nfig = make_subplots(\n    rows=2, cols=2,\n    subplot_titles=(\"MRR (€)\", \"CAC (€)\", \"Churn Rate (%)\", \"New Customers\"),\n    vertical_spacing=0.14,\n    horizontal_spacing=0.10\n)\n\n# MRR\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"mrr\"],\n    mode=\"lines\", fill=\"tozeroy\",\n    fillcolor=\"rgba(127,255,110,0.07)\",\n    line=dict(color=\"#7fff6e\", width=2)), row=1, col=1)\n\n# CAC\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"cac\"],\n    marker_color=\"#a78bfa\"), row=1, col=2)\n\n# Churn\nfig.add_trace(go.Scatter(x=df[\"month\"], y=df[\"churn_rate\"],\n    mode=\"lines+markers\", line=dict(color=\"#68d9ff\", width=2)), row=2, col=1)\n\n# New customers\nfig.add_trace(go.Bar(x=df[\"month\"], y=df[\"new_customers\"],\n    marker_color=\"#ffd166\"), row=2, col=2)\n\nfig.update_layout(\n    showlegend=False,\n    plot_bgcolor=\"#14141f\",\n    paper_bgcolor=\"#14141f\",\n    font_color=\"#9898b0\",\n    title_text=\"Business KPI Summary — 2024\",\n    title_font_color=\"#ffffff\",\n    height=550\n)\nfor i in fig.layout.annotations:\n    i.font.color = \"#e2e2e2\"\n\nfig.update_xaxes(gridcolor=\"#252535\", tickangle=-45, tickfont_size=9)\nfig.update_yaxes(gridcolor=\"#252535\")\nfig.show()"
-  },
-  {
-    "objectID": "projects/list/dashboard.html#takeaways",
-    "href": "projects/list/dashboard.html#takeaways",
-    "title": "Interactive KPI Dashboard",
-    "section": "Takeaways",
-    "text": "Takeaways\n\n\n\n\n\n\nNote\n\n\n\nDashboard design decisions:\n\nThree metrics is usually better than ten. Every additional tile competes for attention — the discipline is in what you leave out.\nThe combined panel is useful for spotting correlations (CAC falling as new customers increase suggests referral effects, not just spend).\nPlotly’s hover interactivity adds real value for self-service exploration without any additional code complexity."
-  },
-  {
-    "objectID": "projects/list/dashboard.html#reflection",
-    "href": "projects/list/dashboard.html#reflection",
-    "title": "Interactive KPI Dashboard",
-    "section": "Reflection",
-    "text": "Reflection\nThis project shifted my thinking about what “good” data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.\nThe combined subplot at the end is the exception: it works because it’s explicitly framed as a summary for someone who already knows what they’re looking at. Context changes what’s appropriate.\n ← Back to Projects"
   },
   {
     "objectID": "projects/list/machine-learning.html",

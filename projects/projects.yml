@@ -14,14 +14,6 @@
   date: 2025-03-01
   author: "Raunit Budhiraja"
 
-- title: "Exploratory Sales Analysis"
-  path: list/data-analysis.qmd
-  image: ../images/project-eda.png
-  description: "Cleaned and explored a retail sales dataset using Pandas, uncovering seasonal trends and product performance patterns through structured EDA."
-  categories: [Python, Data Analysis, EDA, Plotly]
-  date: 2025-03-15
-  author: "Raunit Budhiraja"
-
 - title: "Customer Churn Predictor"
   path: list/machine-learning.qmd
   image: ../images/project-ml.png
@@ -36,12 +28,4 @@
   description: "Multi-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period."
   categories: [Python, Plotly, Dashboard, Visualisation]
   date: 2025-01-20
-  author: "Raunit Budhiraja"
-
-- title: "Market Entry Analysis — SaaS Product"
-  path: list/business-strategy.qmd
-  image: ../images/project-strategy.png
-  description: "Data-driven market entry analysis for a B2B SaaS product combining Porter's Five Forces with publicly available market sizing data."
-  categories: [Business Strategy, Frameworks, Research]
-  date: 2024-11-05
   author: "Raunit Budhiraja"
