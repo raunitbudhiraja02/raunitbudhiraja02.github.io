@@ -4,10 +4,9 @@ project:
 
 website:
   title: "Raunit Budhiraja"
-  favicon: images/favicon.png
+  
   navbar:
     title: false
-    logo: images/logo.png
     background: "#0a0a0f"
     foreground: "#e2e2e2"
     right:
@@ -25,15 +24,15 @@ website:
         text: CV
         target: _blank
       - icon: github
-        href: https://github.com/raunitbudhiraja
+        href: https://github.com/raunitbudhiraja02
         target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/raunitbudhiraja/
         target: _blank
   page-footer:
     background: "#0a0a0f"
-    left: "© 2025 Raunit Budhiraja"
-    right: "Built with [Quarto](https://quarto.org)"
+    left: "© 2026 Raunit Budhiraja"
+    right: "Built with Quarto & GitHub Pages"
 
 format:
   html:
@@ -45,5 +44,4 @@ format:
     toc: false
     page-layout: full
     code-fold: true
-    code-tools: true
     highlight-style: dracula

@@ -368,7 +368,7 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Portfolio\n  Projects\n  \n  \n    A collection of analytical and technical projects built across my degree.\n    Each one started with a question — the code came after.\n  \n\n\n\n  \n    Data Analysis · Python\n    Exploratory Sales Analysis\n    \n      Cleaned and explored a retail sales dataset using Pandas. Found seasonal\n      patterns and top-performing SKUs through visual EDA and grouped aggregations.\n    \n    \n      Python\n      Pandas\n      Plotly\n      EDA\n    \n  \n\n  \n    Machine Learning\n    Customer Churn Predictor\n    \n      Trained a Random Forest classifier on a telecom dataset to predict churn.\n      Explored feature importance and evaluated performance with a confusion matrix.\n    \n    \n      Scikit-learn\n      Pandas\n      Random Forest\n    \n  \n\n  \n    Dashboard · Visualisation\n    Interactive KPI Dashboard\n    \n      Built an interactive multi-panel dashboard with Plotly Express to track\n      business KPIs — revenue, churn, and acquisition costs — with live filtering.\n    \n    \n      Plotly\n      Python\n      BI\n    \n  \n\n  \n    Business Strategy\n    Market Entry Analysis\n    \n      Data-driven market entry analysis for a hypothetical SaaS product.\n      Combines Porter's Five Forces with publicly available market size data.\n    \n    \n      Strategy\n      Research\n      Frameworks\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBERT vs GPT-4 for Sentiment Analysis\n\n\n\nPython\n\nNLP\n\nBERT\n\nDeep Learning\n\nMachine Learning\n\n\n\nFine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications.\n\n\n\nApr 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory Sales Analysis\n\n\n\nPython\n\nData Analysis\n\nEDA\n\nPlotly\n\n\n\nCleaned and explored a retail sales dataset using Pandas, uncovering seasonal trends and product performance patterns through structured EDA.\n\n\n\nMar 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nPower BI Sales Dashboard — TechNova Inc.\n\n\n\nPower BI\n\nDashboard\n\nBusiness Analytics\n\nData Visualisation\n\n\n\nGroup project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024.\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Churn Predictor\n\n\n\nPython\n\nMachine Learning\n\nScikit-learn\n\nClassification\n\n\n\nBuilt a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation.\n\n\n\nFeb 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteractive KPI Dashboard\n\n\n\nPython\n\nPlotly\n\nDashboard\n\nVisualisation\n\n\n\nMulti-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period.\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarket Entry Analysis — SaaS Product\n\n\n\nBusiness Strategy\n\nFrameworks\n\nResearch\n\n\n\nData-driven market entry analysis for a B2B SaaS product combining Porter’s Five Forces with publicly available market sizing data.\n\n\n\nNov 5, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "Portfolio\n  Projects\n  \n  \n    A collection of analytical and technical projects built across my degree.\n    Each one started with a question — the code came after.\n  \n\n\n\n  \n    Data Analysis · Python\n    Exploratory Sales Analysis\n    \n      Cleaned and explored a retail sales dataset using Pandas. Found seasonal\n      patterns and top-performing SKUs through visual EDA and grouped aggregations.\n    \n    \n      Python\n      Pandas\n      Plotly\n      EDA\n    \n  \n\n  \n    Machine Learning\n    Customer Churn Predictor\n    \n      Trained a Random Forest classifier on a telecom dataset to predict churn.\n      Explored feature importance and evaluated performance with a confusion matrix.\n    \n    \n      Scikit-learn\n      Pandas\n      Random Forest\n    \n  \n\n  \n    Dashboard · Visualisation\n    Interactive KPI Dashboard\n    \n      Built an interactive multi-panel dashboard with Plotly Express to track\n      business KPIs — revenue, churn, and acquisition costs — with live filtering.\n    \n    \n      Plotly\n      Python\n      BI\n    \n  \n\n  \n    Business Strategy\n    Market Entry Analysis\n    \n      Data-driven market entry analysis for a hypothetical SaaS product.\n      Combines Porter's Five Forces with publicly available market size data.\n    \n    \n      Strategy\n      Research\n      Frameworks\n    \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBERT vs GPT-4 for Sentiment Analysis\n\n\n\nPython\n\nNLP\n\nBERT\n\nDeep Learning\n\nMachine Learning\n\n\n\nFine-tuning BERT on Rotten Tomatoes reviews and comparing against GPT-4 zero-shot and few-shot prompting for business NLP applications.\n\n\n\nApr 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nExploratory Sales Analysis\n\n\n\nPython\n\nData Analysis\n\nEDA\n\nPlotly\n\n\n\nCleaned and explored a retail sales dataset using Pandas, uncovering seasonal trends and product performance patterns through structured EDA.\n\n\n\nMar 15, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nPower BI Sales Dashboard — TechNova Inc.\n\n\n\nPower BI\n\nDashboard\n\nBusiness Analytics\n\nData Visualisation\n\n\n\nGroup project: interactive Power BI dashboard analysing TechNova Inc. sales, profit, and regional performance across 2015–2024.\n\n\n\nMar 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Churn Predictor\n\n\n\nPython\n\nMachine Learning\n\nScikit-learn\n\nClassification\n\n\n\nBuilt a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation.\n\n\n\nFeb 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nInteractive KPI Dashboard\n\n\n\nPython\n\nPlotly\n\nDashboard\n\nVisualisation\n\n\n\nMulti-panel business intelligence dashboard with Plotly Express tracking MRR, CAC, and churn rate across a 12-month period.\n\n\n\nJan 20, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nMarket Entry Analysis — SaaS Product\n\n\n\nBusiness Strategy\n\nFrameworks\n\nResearch\n\n\n\nData-driven market entry analysis for a B2B SaaS product combining Porter’s Five Forces with publicly available market sizing data.\n\n\n\nNov 5, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/dashboard.html",
@@ -436,79 +436,79 @@
   {
     "objectID": "SETUP.html",
     "href": "SETUP.html",
-    "title": "",
+    "title": "SETUP GUIDE — Read this first",
     "section": "",
-    "text": "Code"
+    "text": "Rename the raunit-portfolio folder to your GitHub username + .github.io e.g. raunitbudhiraja.github.io\n\n\n\nInside the images/ folder, add: - profile.jpg — your photo (used on the About page) - logo.png — a simple logo or your initials (shown in navbar) - favicon.png — small icon shown in browser tab\nCreate a cv/ folder and drop in raunit_cv.pdf\nIf you don’t have these yet, remove the broken references temporarily: - In _quarto.yml: delete the favicon: and logo: lines - In about.qmd: remove or comment out the &lt;img&gt; tag\n\n\n\nFile &gt; Open Folder &gt; select raunitbudhiraja.github.io\n\n\n\nIn the VS Code terminal:\nquarto preview\n\n\n\nquarto render\n\n\n\n# Mac/Linux:\ntouch .nojekyll\n\n# Windows CMD:\ntype nul &gt; .nojekyll\n\n# Windows PowerShell:\nni .nojekyll\n\n\n\n\nCreate a new repo on GitHub named exactly: raunitbudhiraja.github.io\nIn VS Code Source Control panel: Initialize Repository → Stage All → Commit → Publish Branch\n\n\n\n\nGitHub repo → Settings → Pages → Branch: main → Folder: /docs → Save\nYour site will be live at: https://raunitbudhiraja.github.io\n\n\n\n\n\nAdd your real profile photo to images/profile.jpg\nUpload your actual CV to cv/raunit_cv.pdf\nUpdate the About page with real bio details\nUpdate the stats on the homepage (years studying, projects, etc.)\nUpdate GitHub/LinkedIn URLs in _quarto.yml and contact.qmd\nAdd Kubicle certificate screenshots or confirmation dates to about.qmd\nTweak project descriptions to reflect any real work you’ve done\nAdd .nojekyll file before pushing"
   },
   {
     "objectID": "SETUP.html#step-1-rename-the-folder",
     "href": "SETUP.html#step-1-rename-the-folder",
-    "title": "",
-    "section": "Step 1: Rename the folder",
-    "text": "Step 1: Rename the folder\nRename the raunit-portfolio folder to your GitHub username + .github.io e.g. raunitbudhiraja.github.io"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "Rename the raunit-portfolio folder to your GitHub username + .github.io e.g. raunitbudhiraja.github.io"
   },
   {
     "objectID": "SETUP.html#step-2-add-your-images",
     "href": "SETUP.html#step-2-add-your-images",
-    "title": "",
-    "section": "Step 2: Add your images",
-    "text": "Step 2: Add your images\nInside the images/ folder, add: - profile.jpg — your photo (used on the About page) - logo.png — a simple logo or your initials (shown in navbar) - favicon.png — small icon shown in browser tab\nCreate a cv/ folder and drop in raunit_cv.pdf\nIf you don’t have these yet, remove the broken references temporarily: - In _quarto.yml: delete the favicon: and logo: lines - In about.qmd: remove or comment out the &lt;img&gt; tag"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "Inside the images/ folder, add: - profile.jpg — your photo (used on the About page) - logo.png — a simple logo or your initials (shown in navbar) - favicon.png — small icon shown in browser tab\nCreate a cv/ folder and drop in raunit_cv.pdf\nIf you don’t have these yet, remove the broken references temporarily: - In _quarto.yml: delete the favicon: and logo: lines - In about.qmd: remove or comment out the &lt;img&gt; tag"
   },
   {
     "objectID": "SETUP.html#step-3-open-the-folder-in-vs-code",
     "href": "SETUP.html#step-3-open-the-folder-in-vs-code",
-    "title": "",
-    "section": "Step 3: Open the folder in VS Code",
-    "text": "Step 3: Open the folder in VS Code\nFile &gt; Open Folder &gt; select raunitbudhiraja.github.io"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "File &gt; Open Folder &gt; select raunitbudhiraja.github.io"
   },
   {
     "objectID": "SETUP.html#step-4-preview-locally",
     "href": "SETUP.html#step-4-preview-locally",
-    "title": "",
-    "section": "Step 4: Preview locally",
-    "text": "Step 4: Preview locally\nIn the VS Code terminal:\nquarto preview"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "In the VS Code terminal:\nquarto preview"
   },
   {
     "objectID": "SETUP.html#step-5-render-to-docs",
     "href": "SETUP.html#step-5-render-to-docs",
-    "title": "",
-    "section": "Step 5: Render to /docs",
-    "text": "Step 5: Render to /docs\nquarto render"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "quarto render"
   },
   {
     "objectID": "SETUP.html#step-6-add-.nojekyll-file",
     "href": "SETUP.html#step-6-add-.nojekyll-file",
-    "title": "",
-    "section": "Step 6: Add .nojekyll file",
-    "text": "Step 6: Add .nojekyll file\n# Mac/Linux:\ntouch .nojekyll\n\n# Windows CMD:\ntype nul &gt; .nojekyll\n\n# Windows PowerShell:\nni .nojekyll"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "# Mac/Linux:\ntouch .nojekyll\n\n# Windows CMD:\ntype nul &gt; .nojekyll\n\n# Windows PowerShell:\nni .nojekyll"
   },
   {
     "objectID": "SETUP.html#step-7-push-to-github",
     "href": "SETUP.html#step-7-push-to-github",
-    "title": "",
-    "section": "Step 7: Push to GitHub",
-    "text": "Step 7: Push to GitHub\n\nCreate a new repo on GitHub named exactly: raunitbudhiraja.github.io\nIn VS Code Source Control panel: Initialize Repository → Stage All → Commit → Publish Branch"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "Create a new repo on GitHub named exactly: raunitbudhiraja.github.io\nIn VS Code Source Control panel: Initialize Repository → Stage All → Commit → Publish Branch"
   },
   {
     "objectID": "SETUP.html#step-8-enable-github-pages",
     "href": "SETUP.html#step-8-enable-github-pages",
-    "title": "",
-    "section": "Step 8: Enable GitHub Pages",
-    "text": "Step 8: Enable GitHub Pages\nGitHub repo → Settings → Pages → Branch: main → Folder: /docs → Save\nYour site will be live at: https://raunitbudhiraja.github.io"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "GitHub repo → Settings → Pages → Branch: main → Folder: /docs → Save\nYour site will be live at: https://raunitbudhiraja.github.io"
   },
   {
     "objectID": "SETUP.html#things-to-personalise-before-submission",
     "href": "SETUP.html#things-to-personalise-before-submission",
-    "title": "",
-    "section": "Things to personalise before submission",
-    "text": "Things to personalise before submission\n\nAdd your real profile photo to images/profile.jpg\nUpload your actual CV to cv/raunit_cv.pdf\nUpdate the About page with real bio details\nUpdate the stats on the homepage (years studying, projects, etc.)\nUpdate GitHub/LinkedIn URLs in _quarto.yml and contact.qmd\nAdd Kubicle certificate screenshots or confirmation dates to about.qmd\nTweak project descriptions to reflect any real work you’ve done\nAdd .nojekyll file before pushing"
+    "title": "SETUP GUIDE — Read this first",
+    "section": "",
+    "text": "Add your real profile photo to images/profile.jpg\nUpload your actual CV to cv/raunit_cv.pdf\nUpdate the About page with real bio details\nUpdate the stats on the homepage (years studying, projects, etc.)\nUpdate GitHub/LinkedIn URLs in _quarto.yml and contact.qmd\nAdd Kubicle certificate screenshots or confirmation dates to about.qmd\nTweak project descriptions to reflect any real work you’ve done\nAdd .nojekyll file before pushing"
   },
   {
     "objectID": "contact.html",
     "href": "contact.html",
-    "title": "",
+    "title": "Contact",
     "section": "",
-    "text": "Code\n\n\n\n\n\n  Get in touch\n  Contact\n  \n\n\n\n  \n    \n      I'm always open to conversations about data, analytics, projects,\n      or opportunities. Whether you're a recruiter, a potential collaborator,\n      or a fellow student — feel free to reach out.\n    \n\n    \n\n      \n        Email\n        raunit.budhiraja@mail.dcu.ie\n        Fastest way to reach me. I typically reply within 24 hours.\n      \n\n      \n        LinkedIn\n        linkedin.com/in/raunitbudhiraja\n        Connect professionally — I'm open to networking in analytics and tech.\n      \n\n      \n        GitHub\n        github.com/raunitbudhiraja\n        Where all the code for this portfolio and other projects lives.\n      \n\n    \n  \n\n  \n    \n      Currently\n\n      \n        \n          2025 – Present\n          Final Year, BSc Business Analytics\n          Dublin City University\n        \n        \n          Looking for\n          Summer Internship / Graduate Role\n          Data analyst, business analyst, or junior data science roles in Ireland or remote.\n        \n        \n          Interests\n          Python · ML · BI · Strategy\n          Especially interested in companies where analytics sits close to product decisions.\n        \n      \n\n      \n        \n          Download CV (PDF) →"
+    "text": "Get in touch\n  Contact\n  \n\n\n\n  \n    \n      I'm always open to conversations about data, analytics, projects,\n      or opportunities. Whether you're a recruiter, a potential collaborator,\n      or a fellow student — feel free to reach out.\n    \n\n    \n\n      \n        Email\n        raunit.budhiraja@mail.dcu.ie\n        Fastest way to reach me. I typically reply within 24 hours.\n      \n\n      \n        LinkedIn\n        linkedin.com/in/raunitbudhiraja\n        Connect professionally — I'm open to networking in analytics and tech.\n      \n\n      \n        GitHub\n        github.com/raunitbudhiraja\n        Where all the code for this portfolio and other projects lives.\n      \n\n    \n  \n\n  \n    \n      Currently\n\n      \n        \n          2025 – Present\n          Final Year, BSc Business Analytics\n          Dublin City University\n        \n        \n          Looking for\n          Summer Internship / Graduate Role\n          Data analyst, business analyst, or junior data science roles in Ireland or remote.\n        \n        \n          Interests\n          Python · ML · BI · Strategy\n          Especially interested in companies where analytics sits close to product decisions.\n        \n      \n\n      \n        \n          Download CV (PDF) →"
   },
   {
     "objectID": "projects/data-analysis.html",
@@ -947,8 +947,8 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "",
+    "title": "About Me",
     "section": "",
-    "text": "Code\n\n\n\n\n\n  Who I am\n  About Me\n  \n\n\n  \n    \n    \n      \n        ✉ raunit.budhiraja@mail.dcu.ie\n      \n      \n        LinkedIn →\n      \n      \n        GitHub →\n      \n    \n  \n\n  \n    \n      Hi, I'm Raunit — a Business Analytics student at Dublin City University with a genuine interest\n      in the space where data meets decision-making. I grew up comfortable with numbers but\n      fell in love with code once I realised how much you could do with a 40-line Python script\n      and a decent dataset.\n    \n\n    \n      My academic work sits across data analysis, machine learning, and business strategy.\n      Outside of lectures, I spend time building small projects — usually starting from a question\n      I genuinely want to answer, then figuring out the tools from there.\n    \n\n    \n      I'm particularly drawn to projects where the output is something a non-technical stakeholder\n      can actually use — a clean dashboard, a single-number forecast, or a well-told data story.\n      That intersection of rigour and communication is where I want to keep getting better.\n    \n\n    \n      Education\n      \n        \n          2022 – Present\n          BSc Business Analytics\n          Dublin City University (DCU)\n        \n        \n          2022\n          Leaving Certificate\n          Secondary School, India\n        \n      \n    \n  \n\n\n\n  Compliance Training\n  Kubicle Certifications\n  As part of the BAA1104 module, I completed the following Kubicle courses covering data governance and ethics:\n\n  \n    \n      ✓ Completed\n      Introduction to GDPR\n      Principles of data protection, lawful processing, and individual rights under EU law.\n    \n    \n      ✓ Completed\n      Data Security: Keeping Your Information Safe\n      Introduction to information security concepts, threats, and mitigation strategies.\n    \n    \n      ✓ Completed\n      Data Security: Handling Data Securely\n      Security protocols, responsible handling of sensitive data, and organisational practices.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Introduction\n      Ethical dimensions of data collection, bias, fairness, and algorithmic accountability.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Applying Ethical Thinking\n      Practical frameworks for responsible data use in real business and research contexts."
+    "text": "Who I am\n  About Me\n  \n\n\n  \n    \n    \n      \n        ✉ raunit.budhiraja@mail.dcu.ie\n      \n      \n        LinkedIn →\n      \n      \n        GitHub →\n      \n    \n  \n\n  \n    \n      Hi, I'm Raunit — a Business Analytics student at Dublin City University with a genuine interest\n      in the space where data meets decision-making. I grew up comfortable with numbers but\n      fell in love with code once I realised how much you could do with a 40-line Python script\n      and a decent dataset.\n    \n\n    \n      My academic work sits across data analysis, machine learning, and business strategy.\n      Outside of lectures, I spend time building small projects — usually starting from a question\n      I genuinely want to answer, then figuring out the tools from there.\n    \n\n    \n      I'm particularly drawn to projects where the output is something a non-technical stakeholder\n      can actually use — a clean dashboard, a single-number forecast, or a well-told data story.\n      That intersection of rigour and communication is where I want to keep getting better.\n    \n\n    \n      Education\n      \n        \n          2022 – Present\n          BSc Business Analytics\n          Dublin City University (DCU)\n        \n        \n          2022\n          Leaving Certificate\n          Secondary School, India\n        \n      \n    \n  \n\n\n\n  Compliance Training\n  Kubicle Certifications\n  As part of the BAA1104 module, I completed the following Kubicle courses covering data governance and ethics:\n\n  \n    \n      ✓ Completed\n      Introduction to GDPR\n      Principles of data protection, lawful processing, and individual rights under EU law.\n    \n    \n      ✓ Completed\n      Data Security: Keeping Your Information Safe\n      Introduction to information security concepts, threats, and mitigation strategies.\n    \n    \n      ✓ Completed\n      Data Security: Handling Data Securely\n      Security protocols, responsible handling of sensitive data, and organisational practices.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Introduction\n      Ethical dimensions of data collection, bias, fairness, and algorithmic accountability.\n    \n    \n      ✓ Completed\n      Data Ethics & Risk: Applying Ethical Thinking\n      Practical frameworks for responsible data use in real business and research contexts."
   }
 ]
