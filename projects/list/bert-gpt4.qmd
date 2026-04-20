@@ -2,7 +2,7 @@
 title: "BERT vs GPT-4 for Sentiment Analysis"
 description: "Fine-tuning BERT on Rotten Tomatoes reviews and comparing performance against GPT-4 zero-shot and few-shot prompting for business NLP applications."
 author: "Raunit Budhiraja"
-date: "2025-04-10"
+date: "2026-04-10"
 image: "../../images/project-bert.png"
 categories: [Python, NLP, BERT, Machine Learning, Deep Learning]
 page-layout: full
