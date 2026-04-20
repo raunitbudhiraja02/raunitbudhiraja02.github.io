@@ -16,7 +16,7 @@
 
 - title: "Customer Churn Predictor"
   path: list/machine-learning.qmd
-  image: ../images/project-ml.jpeg
+  image: ../images/project-ml.png
   description: "Built a Random Forest classifier to predict customer churn in a telecom dataset, with feature importance analysis and ROC curve evaluation."
   categories: [Python, Machine Learning, Scikit-learn, Classification]
   date: 2025-02-10
