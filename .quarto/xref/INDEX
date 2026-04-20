@@ -1,0 +1,50 @@
+{
+  "contact.qmd": {
+    "contact.html": "32b75753"
+  },
+  "SETUP.md": {
+    "SETUP.html": "7428e616"
+  },
+  "projects/data-analysis.qmd": {
+    "data-analysis.html": "9d17ae6a"
+  },
+  "projects/dashboard.qmd": {
+    "dashboard.html": "aa734a60"
+  },
+  "projects/machine-learning.qmd": {
+    "machine-learning.html": "fb0697b6"
+  },
+  "projects/index.qmd": {
+    "index.html": "db0d8f56"
+  },
+  "projects/business-strategy.qmd": {
+    "business-strategy.html": "a44578d9"
+  },
+  "index.qmd": {
+    "index.html": "48801529"
+  },
+  "about.qmd": {
+    "about.html": "51f15aae"
+  },
+  "reflections.qmd": {
+    "reflections.html": "836089c3"
+  },
+  "projects/list/data-analysis.qmd": {
+    "data-analysis.html": "84e19672"
+  },
+  "projects/list/dashboard.qmd": {
+    "dashboard.html": "0ae27145"
+  },
+  "projects/list/machine-learning.qmd": {
+    "machine-learning.html": "0139938d"
+  },
+  "projects/list/business-strategy.qmd": {
+    "business-strategy.html": "81658826"
+  },
+  "projects/list/powerbi-dashboard.qmd": {
+    "powerbi-dashboard.html": "c5b2eea2"
+  },
+  "projects/list/bert-gpt4.qmd": {
+    "bert-gpt4.html": "94de1a62"
+  }
+}

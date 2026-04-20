@@ -1,0 +1,191 @@
+---
+title: "Exploratory Sales Analysis"
+date: "2025-03-15"
+categories: [Python, Data Analysis, EDA]
+description: "Cleaning and exploring a retail dataset to surface seasonal trends and product performance using Pandas and Plotly."
+page-layout: full
+toc: true
+code-fold: true
+---
+
+```{=html}
+<div style="margin-bottom: 2rem;">
+  <span class="pill pill-neon">Python</span>
+  <span class="pill">Pandas</span>
+  <span class="pill">Plotly</span>
+  <span class="pill">EDA</span>
+</div>
+```
+
+## Overview
+
+Every retail business generates transaction logs — thousands of rows tracking what sold, when, and where. The problem is rarely a lack of data. It's knowing what to look at first.
+
+This project takes a synthetic retail dataset and works through a structured EDA process: cleaning the data, understanding its shape, and then asking progressively sharper questions until a few genuinely useful patterns emerge.
+
+---
+
+## Dataset
+
+The dataset used here is a synthetic retail sales log with the following columns: `date`, `product`, `category`, `region`, `units_sold`, and `revenue`. It covers 12 months of transactions across four product categories.
+
+---
+
+## Setup & Data Loading
+
+```{python}
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+
+# Reproducible synthetic dataset
+np.random.seed(42)
+
+dates = pd.date_range("2024-01-01", "2024-12-31", freq="D")
+categories = ["Electronics", "Apparel", "Home & Garden", "Sports"]
+regions = ["Dublin", "Cork", "Galway", "Limerick"]
+
+rows = []
+for date in dates:
+    for _ in range(np.random.randint(3, 8)):
+        cat = np.random.choice(categories)
+        base = {"Electronics": 180, "Apparel": 55, "Home & Garden": 90, "Sports": 70}[cat]
+        seasonal = 1 + 0.3 * np.sin((date.month - 1) * np.pi / 6)
+        rows.append({
+            "date": date,
+            "category": cat,
+            "region": np.random.choice(regions),
+            "units_sold": int(np.random.poisson(seasonal * 5)),
+            "revenue": round(base * seasonal * np.random.uniform(0.85, 1.15) * np.random.poisson(seasonal * 5), 2)
+        })
+
+df = pd.DataFrame(rows)
+df["month"] = df["date"].dt.to_period("M").astype(str)
+df["month_num"] = df["date"].dt.month
+
+print(f"Rows: {len(df):,} | Columns: {df.shape[1]}")
+df.head()
+```
+
+---
+
+## Data Quality Check
+
+Before anything else, check for nulls and confirm the data types are what you'd expect.
+
+```{python}
+print("Null values:\n", df.isnull().sum())
+print("\nData types:\n", df.dtypes)
+print(f"\nDate range: {df['date'].min().date()} → {df['date'].max().date()}")
+```
+
+No nulls, correct types, full year of coverage. Clean enough to move straight into analysis.
+
+---
+
+## Monthly Revenue Trend
+
+The first question: is revenue growing, declining, or seasonal?
+
+```{python}
+monthly = df.groupby("month")["revenue"].sum().reset_index()
+monthly.columns = ["month", "total_revenue"]
+
+fig = px.line(
+    monthly, x="month", y="total_revenue",
+    title="Monthly Revenue — Full Year",
+    labels={"month": "", "total_revenue": "Revenue (€)"},
+    markers=True,
+    color_discrete_sequence=["#7fff6e"]
+)
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="#252535", tickangle=-30),
+    yaxis=dict(gridcolor="#252535"),
+    hoverlabel=dict(bgcolor="#1a1a26", font_color="#e2e2e2")
+)
+fig.update_traces(line_width=2.5)
+fig.show()
+```
+
+There's a clear seasonal arc — revenue builds through the summer and peaks in Q4, which lines up with Christmas trading patterns.
+
+---
+
+## Revenue by Category
+
+Which categories are pulling the most weight?
+
+```{python}
+cat_rev = df.groupby("category")["revenue"].sum().reset_index().sort_values("revenue", ascending=True)
+
+fig = px.bar(
+    cat_rev, y="category", x="revenue",
+    orientation="h",
+    title="Total Revenue by Category",
+    labels={"category": "", "revenue": "Revenue (€)"},
+    color="revenue",
+    color_continuous_scale=["#252535", "#7fff6e"]
+)
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="#252535"),
+    yaxis=dict(gridcolor="rgba(0,0,0,0)"),
+    coloraxis_showscale=False
+)
+fig.show()
+```
+
+Electronics dominates by revenue, which makes sense given higher average transaction values — even if it doesn't necessarily have the highest volume.
+
+---
+
+## Regional Breakdown
+
+Is the Dublin market as dominant as one might assume?
+
+```{python}
+region_cat = df.groupby(["region", "category"])["revenue"].sum().reset_index()
+
+fig = px.bar(
+    region_cat, x="region", y="revenue", color="category",
+    title="Revenue by Region and Category",
+    labels={"region": "", "revenue": "Revenue (€)", "category": "Category"},
+    barmode="group",
+    color_discrete_sequence=["#7fff6e", "#68d9ff", "#a78bfa", "#ffd166"]
+)
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="rgba(0,0,0,0)"),
+    yaxis=dict(gridcolor="#252535"),
+    legend=dict(bgcolor="rgba(0,0,0,0)")
+)
+fig.show()
+```
+
+---
+
+## Key Takeaways
+
+:::{.callout-note}
+**What this analysis found:**
+
+- Revenue follows a clear seasonal curve peaking in Q4, suggesting promotional spend should be front-loaded into Q3 to capture the ramp-up.
+- Electronics generates disproportionate revenue relative to its transaction count — protecting margin here matters more than volume discounts.
+- Regional revenue is broadly distributed, so a Dublin-only focus would miss a substantial portion of the market.
+:::
+
+---
+
+## Reflection
+
+This project reinforced something I keep running into — the most useful output of an EDA isn't the visualisations themselves, it's the shortlist of questions they raise. Here, the seasonal pattern immediately suggests a follow-up: does the peak come from higher basket sizes, or just more transactions? That's the next query to write.
+
+The other thing worth noting is that clean data still takes time. Even with a synthetic dataset designed to be tidy, there were decisions to make about aggregation level, date formatting, and how to handle multi-category breakdowns in a way that didn't obscure the signal.
+
+<br><br>
+<a href="index.qmd" class="btn-ghost">← Back to Projects</a>

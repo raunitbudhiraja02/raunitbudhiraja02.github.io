@@ -1,0 +1,200 @@
+---
+title: "Interactive KPI Dashboard"
+date: "2025-01-20"
+categories: [Python, Plotly, Dashboard, Visualisation]
+description: "A multi-panel business intelligence dashboard built with Plotly Express to track revenue, customer acquisition cost, and churn over time."
+page-layout: full
+toc: true
+code-fold: true
+---
+
+```{=html}
+<div style="margin-bottom: 2rem;">
+  <span class="pill pill-neon">Plotly</span>
+  <span class="pill">Python</span>
+  <span class="pill">Dashboard</span>
+  <span class="pill">BI</span>
+</div>
+```
+
+## Overview
+
+A dashboard's job is simple in theory: put the right number in front of the right person at the right time. In practice it's trickier — you have to decide what actually matters, strip out everything that doesn't, and then make it readable at a glance.
+
+This project builds a multi-panel KPI dashboard for a fictional subscription business, tracking three core metrics over a 12-month period: monthly recurring revenue, customer acquisition cost, and churn rate. All charts are built with Plotly Express and styled consistently.
+
+---
+
+## Setup & Data
+
+```{python}
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+np.random.seed(7)
+
+months = pd.period_range("2024-01", periods=12, freq="M")
+month_labels = [str(m) for m in months]
+
+mrr = np.cumsum(np.random.normal(3000, 600, 12)) + 40000
+cac = 120 + np.random.normal(0, 10, 12) + np.linspace(0, -25, 12)
+churn = np.clip(0.065 + np.random.normal(0, 0.008, 12) + np.linspace(0, -0.02, 12), 0.02, 0.12)
+new_customers = (np.random.poisson(35, 12) + np.linspace(0, 20, 12)).astype(int)
+
+df = pd.DataFrame({
+    "month": month_labels,
+    "mrr": mrr.round(0),
+    "cac": cac.round(2),
+    "churn_rate": (churn * 100).round(2),
+    "new_customers": new_customers
+})
+df.head()
+```
+
+---
+
+## Monthly Recurring Revenue
+
+```{python}
+fig = px.area(
+    df, x="month", y="mrr",
+    title="Monthly Recurring Revenue (MRR)",
+    labels={"month": "", "mrr": "MRR (€)"},
+    color_discrete_sequence=["#7fff6e"]
+)
+fig.update_traces(fill='tozeroy', fillcolor='rgba(127,255,110,0.08)', line_width=2.5)
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="#252535", tickangle=-30),
+    yaxis=dict(gridcolor="#252535"),
+)
+fig.show()
+```
+
+MRR is growing steadily — the upward slope steepens slightly in Q3, which correlates with the increase in new customer acquisition visible later.
+
+---
+
+## Customer Acquisition Cost
+
+```{python}
+fig = px.bar(
+    df, x="month", y="cac",
+    title="Customer Acquisition Cost (CAC)",
+    labels={"month": "", "cac": "CAC (€)"},
+    color="cac",
+    color_continuous_scale=["#7fff6e", "#252535"]
+)
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="rgba(0,0,0,0)", tickangle=-30),
+    yaxis=dict(gridcolor="#252535"),
+    coloraxis_showscale=False
+)
+fig.show()
+```
+
+CAC is trending down — a good sign that either marketing efficiency is improving or organic/referral channels are picking up share.
+
+---
+
+## Churn Rate Over Time
+
+```{python}
+fig = px.line(
+    df, x="month", y="churn_rate",
+    title="Monthly Churn Rate (%)",
+    labels={"month": "", "churn_rate": "Churn Rate (%)"},
+    markers=True,
+    color_discrete_sequence=["#68d9ff"]
+)
+fig.add_hline(y=5, line_dash="dash", line_color="#5a5a72",
+              annotation_text="5% target", annotation_font_color="#5a5a72")
+fig.update_layout(
+    plot_bgcolor="#14141f", paper_bgcolor="#14141f",
+    font_color="#9898b0", title_font_color="#ffffff",
+    xaxis=dict(gridcolor="#252535", tickangle=-30),
+    yaxis=dict(gridcolor="#252535"),
+)
+fig.update_traces(line_width=2.5)
+fig.show()
+```
+
+Churn opens above the 5% target in early months but trends down toward it by year-end. The trajectory is encouraging, though it hasn't yet broken through the threshold consistently.
+
+---
+
+## Combined KPI Overview
+
+All four metrics on one canvas for executive summary use.
+
+```{python}
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("MRR (€)", "CAC (€)", "Churn Rate (%)", "New Customers"),
+    vertical_spacing=0.14,
+    horizontal_spacing=0.10
+)
+
+# MRR
+fig.add_trace(go.Scatter(x=df["month"], y=df["mrr"],
+    mode="lines", fill="tozeroy",
+    fillcolor="rgba(127,255,110,0.07)",
+    line=dict(color="#7fff6e", width=2)), row=1, col=1)
+
+# CAC
+fig.add_trace(go.Bar(x=df["month"], y=df["cac"],
+    marker_color="#a78bfa"), row=1, col=2)
+
+# Churn
+fig.add_trace(go.Scatter(x=df["month"], y=df["churn_rate"],
+    mode="lines+markers", line=dict(color="#68d9ff", width=2)), row=2, col=1)
+
+# New customers
+fig.add_trace(go.Bar(x=df["month"], y=df["new_customers"],
+    marker_color="#ffd166"), row=2, col=2)
+
+fig.update_layout(
+    showlegend=False,
+    plot_bgcolor="#14141f",
+    paper_bgcolor="#14141f",
+    font_color="#9898b0",
+    title_text="Business KPI Summary — 2024",
+    title_font_color="#ffffff",
+    height=550
+)
+for i in fig.layout.annotations:
+    i.font.color = "#e2e2e2"
+
+fig.update_xaxes(gridcolor="#252535", tickangle=-45, tickfont_size=9)
+fig.update_yaxes(gridcolor="#252535")
+fig.show()
+```
+
+---
+
+## Takeaways
+
+:::{.callout-note}
+**Dashboard design decisions:**
+
+- Three metrics is usually better than ten. Every additional tile competes for attention — the discipline is in what you leave out.
+- The combined panel is useful for spotting correlations (CAC falling as new customers increase suggests referral effects, not just spend).
+- Plotly's hover interactivity adds real value for self-service exploration without any additional code complexity.
+:::
+
+---
+
+## Reflection
+
+This project shifted my thinking about what "good" data visualisation means. My instinct was to make charts visually complex — gradient fills, annotations, reference lines everywhere. But the versions my classmates found most useful were the simpler ones with a clear single question per chart.
+
+The combined subplot at the end is the exception: it works because it's explicitly framed as a summary for someone who already knows what they're looking at. Context changes what's appropriate.
+
+<br><br>
+<a href="index.qmd" class="btn-ghost">← Back to Projects</a>
