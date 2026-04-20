@@ -2,6 +2,7 @@
 title: "Raunit Budhiraja"
 image: images/profile.png
 toc: false
+code-tools: false
 about:
   template: trestles
   image-shape: round
@@ -9,11 +10,11 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/raunitbudhiraja/
+      href: https://www.linkedin.com/in/raunitbudhiraja02/
       target: _blank
     - icon: github
       text: GitHub
-      href: https://github.com/raunitbudhiraja
+      href: https://github.com/raunitbudhiraja02
       target: _blank
     - icon: envelope
       text: Email
@@ -25,13 +26,9 @@ about:
 
 ## Hi, I'm Raunit.
 
-I'm a **Business Analytics** student at Dublin City University with a genuine interest
-in the space where data meets decision-making. I turn messy datasets into patterns,
-patterns into insights, and insights into things people can actually act on.
+I'm a **Business Analytics** student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.
 
-My work sits across data analysis, machine learning, and business strategy.
-Outside of lectures I build small projects — usually starting from a question
-I genuinely want to answer, then figuring out the tools from there.
+My work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there.
 
 ---
 
