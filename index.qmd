@@ -26,9 +26,9 @@ about:
 
 ## Hi, I'm Raunit.
 
-I'm a **Business Analytics** student at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.
+I'm a Business Analyst, Pursuing my Master's Degree at Dublin City University with a genuine interest in the space where data meets decision-making. I turn messy datasets into patterns, patterns into insights, and insights into things people can actually act on.
 
-My work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects — usually starting from a question I genuinely want to answer, then figuring out the tools from there.
+My work sits across data analysis, machine learning, and business strategy. Outside of lectures I build small projects; usually starting from a question I genuinely want to answer, then figuring out the tools from there.
 
 ---
 
@@ -46,8 +46,8 @@ My work sits across data analysis, machine learning, and business strategy. Outs
 ## Education
 
 **BSc Business Analytics** — Dublin City University *(2022 – Present)*
-
-**Leaving Certificate** *(2022)*
+**BCA, Bachelor's Degree Certificate - Amity University, India** *(2020-2023)*
+**High School Leaving Certificate, Delhi Public School, India ** *(2020)*
 
 ---
 
